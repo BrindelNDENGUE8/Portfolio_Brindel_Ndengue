@@ -3,867 +3,258 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Brindel Ndengue – Portfolio | Technicien Réseaux & Systèmes Informatiques</title>
-    <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Brindel Ndengue – Portfolio | Technicien Réseaux & Systèmes</title>
+    
+    <!-- Polices -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icônes -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<body class="light-mode">
 
-    <!-- Bulles animées (augmenté à 35 bulles dans le script) -->
+    <!-- Feuille de style -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dark-mode">
+
+    <!-- Arrière-plan animé -->
     <div class="bubbles-container"></div>
 
-<!-- Navigation améliorée – minimaliste mais chaleureuse -->
-<nav class="navbar">
-    <div class="nav-content">
-        <div class="logo">
-            Brindel Ndengue
-            <span class="logo-dot">.</span>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="#" class="logo">
+                Brindel Ndengue<span class="logo-dot">.</span>
+            </a>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#about" class="nav-link">À propos</a>
+                <a href="#experiences" class="nav-link">Parcours</a>
+                <a href="#projects" class="nav-link">Projets</a>
+                <a href="#engagements" class="nav-link">Engagements</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <a href="cv.pdf" target="_blank" class="btn-cv">CV PDF</a>
+                <button id="theme-toggle" class="theme-btn" aria-label="Changer de thème">
+                    <i class="fas fa-sun"></i>
+                </button>
+            </div>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
+    </nav>
 
-        <div class="nav-links">
-            <a href="#about">À propos</a>
-            <a href="#projects">Projets</a>
-            <a href="#engagements">Engagements</a>
-            <a href="#contact">Contact</a>
-            <a href="cv.pdf" target="_blank" class="btn-cv">CV PDF</a>
-        </div>
+    <main>
+        <!-- SECTION HERO -->
+        <header id="hero">
+            <div class="hero-content">
+                <div class="hero-photo">
+                    <div class="photo-frame">
+                        <img src="/profile.png" alt="Brindel Ndengue" class="profile-pic" loading="lazy">
+                    </div>
+                </div>
+                <div class="hero-text">
+                    <h1>Brindel Ndengue</h1>
+                    <h2>Étudiant Bachelor • Réseaux & Systèmes Informatiques</h2>
+                    <p class="tagline">
+                        Administration Linux • Services réseaux (DHCP, DNS ) • Automatisation & Sécurité  
 
-        <button id="theme-toggle" class="theme-btn" aria-label="Changer de thème">
-            <i class="fas fa-moon"></i>
-        </button>
-    </div>
-</nav>
-
-<main>
-
-    <!-- Hero – épuré mais plus vivant -->
-    <header id="hero">
-        <div class="hero-content">
-            <div class="hero-photo">
-                <div class="photo-frame">
-                    <img src="/profile.png" alt="Brindel Ndengue" class="profile-pic" loading="lazy">
+                        <span class="highlight-text">Recherche alternance 2026–2027</span>
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#contact" class="btn-primary">Me contacter</a>
+                        <a href="cv.pdf" target="_blank" class="btn-outline">Télécharger CV</a>
+                    </div>
+                    <div class="hero-stats-simple">
+                        <div class="stat-item">
+                            <span class="counter" data-target="7">0</span>
+                            <span>projets réalisés</span>
+                        </div>
+                        <div class="stat-item stat-accent">
+                            <span>Disponible dès</span>
+                            <span class="year">2026</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <h1>Brindel Ndengue</h1>
-            <h2>Étudiant Bachelor 2 • Réseaux & Systèmes Informatiques</h2>
-
-            <p class="tagline">
-                Administration Linux • Services réseaux (DHCP, DNS, BIND) • Automatisation & Sécurité<br>
-                <span class="highlight-text">Recherche alternance 2026–2027</span>
-            </p>
-
-            <div class="hero-actions">
-                <a href="#contact" class="btn-primary">Me contacter</a>
-                <a href="/cv.pdf" target="_blank" class="btn-outline">Télécharger CV</a>
-            </div>
-
-            <div class="hero-stats-simple">
-                <div class="stat-item">
-                    <span class="counter" data-target="7">0</span>
-                    <span>projets réalisés</span>
-                </div>
-                <div class="stat-item stat-accent">
-                    <span>Disponible dès</span>
-                    <span class="year">2026</span>
-                </div>
-            </div>
-        </div>
         </header>
 
+        <!-- SECTION À PROPOS -->
         <section id="about" class="section fade-in">
             <h2>Qui suis-je ?</h2>
-            <p>Actuellement en deuxième année de Bachelor Réseaux et Systèmes Informatiques, je développe une expertise concrète en administration d’infrastructures IT, configuration de services réseaux essentiels et automatisation de tâches répétitives ou chronophages.</p>
+            <p>Actuellement en Bachelor Réseaux et Systèmes Informatiques à <strong>Keyce Academy Toulouse</strong>, je développe une expertise concrète en administration d’infrastructures IT, configuration de services réseaux essentiels et automatisation.</p>
             <p>Mon intérêt pour les technologies réseaux est né très tôt : comprendre comment les données circulent, comment sécuriser ces flux et comment rendre un système fiable et scalable me passionne au quotidien.</p>
-            <p>J’aime particulièrement travailler en environnement Linux (Debian, Ubuntu, Kali pour les aspects sécurité), configurer des services comme DHCP, DNS (BIND), serveurs web, et automatiser des processus via scripts Bash, Python ou même VBA lorsque le contexte l’exige (gestion administrative, reporting).</p>
-            <p>En parallèle de mes études, je réalise des projets personnels et académiques ambitieux, je contribue occasionnellement à des dépôts open-source, et je me forme en continu via des plateformes (Coursera, Cisco Networking Academy, TryHackMe, etc.).</p>
+            <p>J’aime particulièrement travailler en environnement Linux (Debian, Ubuntu), configurer des services comme DHCP, DNS (BIND), et automatiser des processus via scripts Bash ou Python.</p>
             <p>Mon profil se distingue par :</p>
             <ul>
-                <li>Une approche très orientée résolution de problèmes concrets</li>
-                <li>Une capacité à documenter clairement mes démarches (schémas, README détaillés, rapports)</li>
-                <li>Une curiosité qui me pousse à tester des solutions open-source avant les solutions propriétaires coûteuses</li>
-                <li>Une bonne communication technique (rédaction de procédures, présentations orales de projets)</li>
+                <li>Une approche orientée résolution de problèmes concrets</li>
+                <li>Une capacité à documenter clairement mes démarches</li>
+                <li>Une curiosité pour les solutions open-source</li>
+                <li>Une bonne communication technique</li>
             </ul>
-            <p class="highlight">Objectif professionnel 2026–2028 : devenir un administrateur systèmes & réseaux fiable, polyvalent, capable d’intervenir sur l’infrastructure physique, virtuelle et cloud, tout en montant progressivement vers des rôles DevOps / cybersécurité.</p>
+            <p class="highlight">Objectif 2026–2028 : devenir un administrateur systèmes & réseaux fiable, polyvalent, et monter progressivement vers des rôles DevOps / cybersécurité.</p>
         </section>
 
+        <!-- SECTION PARCOURS -->
         <section id="experiences" class="section fade-in">
             <h2>Parcours & Expériences</h2>
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
                     <div class="timeline-content">
-                        <h3>Bachelor 2 Réseaux et Systèmes Informatiques</h3>
-                        <span>2024 – 2026 (en cours) | [Nom de l’établissement]</span>
-                        <p>Formation professionnalisante axée sur l’administration réseaux et systèmes, la cybersécurité de base, la virtualisation et les fondamentaux du cloud.</p>
-                        <p>Principaux modules suivis :</p>
+                        <h3>Bachelor Réseaux et Systèmes Informatiques</h3>
+                        <span>2024 – 2026 (en cours) | <strong>Keyce Academy Toulouse</strong></span>
+                        <p>Formation axée sur l'admin. réseaux/systèmes, la cybersécurité, la virtualisation et le cloud.</p>
                         <ul>
-                            <li>Administration Linux avancée (gestion services, utilisateurs, SELinux, firewalling)</li>
-                            <li>Réseaux : TCP/IP approfondi, commutation, routage, VLAN, NAT, DHCP, DNS</li>
-                            <li>Sécurité : principes cryptographiques, pare-feu stateful, détection d’intrusions</li>
-                            <li>Bases de données : PostgreSQL et MySQL (modélisation, requêtes complexes, administration)</li>
-                            <li>Virtualisation & conteneurs : VMware, VirtualBox, Docker basics</li>
+                            <li>Admin. Linux avancée, Réseaux TCP/IP, Sécurité (firewalling), BDD (PostgreSQL), Virtualisation (VMware, Docker).</li>
                         </ul>
-                        <p>Moyenne actuelle : 16.58/20 – Mention Bien espérée en fin de Bachelor 2.</p>
                     </div>
                 </div>
-
                 <div class="timeline-item">
                     <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
                     <div class="timeline-content">
-                        <h3>Stage – Administrateur Sytème, Assistance Utilisateur & Gestion des Accès </h3>
+                        <h3>Stage – Administrateur Système & Support</h3>
                         <span>Juillet–Août 2025 | SSN Yaoundé</span>
-                        <p>Missions réalisées :</p>
-                        <ul>
-                            <li>Support niveau 1/2 : résolution ~65 tickets utilisateurs (Windows, bureautique, imprimantes réseau)</li>
-                            <li>Configuration et extension réseau Wi-Fi (ajout points d’accès, optimisation couverture)</li>
-                            <li>Participation à la migration d’un serveur DHCP vers une nouvelle plage IP</li>
-                            <li>Documentation de procédures internes (création de 12 fiches techniques)</li>
-                            <li>Premiers pas sur Active Directory : création utilisateurs/groupes, délégation droits</li>
-                        </ul>
-                        <p>Résultats mesurables : réduction de 22 % du temps moyen de résolution des tickets Wi-Fi grâce à une meilleure cartographie et configuration des canaux.</p>
+                        <p>Support N1/N2, configuration Wi-Fi, migration DHCP, documentation et initiation à Active Directory.</p>
                     </div>
                 </div>
-
                 <div class="timeline-item">
                     <div class="timeline-icon"><i class="fas fa-laptop-code"></i></div>
                     <div class="timeline-content">
-                        <h3>Projets personnels & auto-formation continue</h3>
+                        <h3>Projets personnels & Auto-formation</h3>
                         <span>2023 – aujourd’hui</span>
-                        <p>Activités régulières :</p>
-                        <ul>
-                            <li>Mise en place de laboratoires virtuels (GNS3, VirtualBox, Proxmox) pour tester configurations réseaux</li>
-                            <li>Participation à 4 CTF / challenges sécurité (TryHackMe, HackTheBox Academy)</li>
-                            <li>Développement et publication de scripts d’automatisation (GitHub)</li>
-                            <li>Suivi de formations en ligne : Cisco CCNA modules, Linux Essentials, Google Cybersecurity, bases AWS</li>
-                        </ul>
+                        <p>Labs virtuels (GNS3, Proxmox), participation à des CTF (TryHackMe), développement de scripts sur GitHub et suivi de formations (Cisco, Google Cybersec).</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        
-
-
-
-
-        <!-- ======================================================================
-     SECTION PROJETS – VERSION INTERACTIVE AVEC MODALES DÉTAILLÉES
-     ====================================================================== -->
-
-
-<!-- ======================================================================
-     SECTION PROJETS – ACCORDION COMPLET POUR LES 7 PROJETS
-     ====================================================================== -->
-<section id="projects" class="section fade-in">
-    <div class="container">
-        <h2>Mes Projets</h2>
-        <p class="intro-projects">
-            Cliquez sur chaque carte pour découvrir les objectifs, le contexte, les aspects techniques, les captures d'écran, les compétences et mes engagements associés.
-        </p>
-
-        <div class="projects-accordion">
-
-            <!-- Projet 1 -->
-            <div class="project-item">
-                <div class="project-header clickable" data-toggle="project1">
-                    <h4>Installation et configuration DHCP + DNS (BIND9)</h4>
-                    <p>Réseau local autonome – attribution IP automatique + résolution noms interne</p>
-                    <div class="badges">
-                        <span class="badge">DHCP</span><span class="badge">BIND9</span><span class="badge">Linux</span>
+        <!-- SECTION PROJETS -->
+        <section id="projects" class="section fade-in">
+            <div class="container">
+                <h2>Mes Projets</h2>
+                <p class="intro-projects">Cliquez sur chaque projet pour en voir les détails.</p>
+                <div class="projects-accordion">
+                    <!-- Projet 1 -->
+                    <div class="project-item">
+                        <div class="project-header clickable" data-toggle="project1">
+                            <h4>Installation DHCP + DNS (BIND9)</h4>
+                            <div class="badges"><span class="badge">DHCP</span><span class="badge">BIND9</span><span class="badge">Linux</span></div>
+                            <i class="fas fa-chevron-down arrow"></i>
+                        </div>
+                        <div class="project-details" id="project1">
+                            <p><strong>Objectif :</strong> Mettre en place un réseau local autonome avec attribution IP dynamique et résolution de noms interne.</p>
+                            <p><strong>Détails :</strong> Installation et configuration d'ISC-DHCP-SERVER et BIND9 sur Debian 12. Gestion des zones, des baux et dépannage avec `dig` et `tcpdump`.</p>
+                        </div>
                     </div>
-                    <i class="fas fa-chevron-down arrow"></i>
+                    <!-- Projet 2 -->
+                    <div class="project-item">
+                        <div class="project-header clickable" data-toggle="project2">
+                            <h4>Plateforme de gestion de projets</h4>
+                            <div class="badges"><span class="badge">PostgreSQL</span><span class="badge">PHP</span></div>
+                            <i class="fas fa-chevron-down arrow"></i>
+                        </div>
+                        <div class="project-details" id="project2">
+                            <p><strong>Objectif :</strong> Créer une application web pour le suivi de projets avec une gestion de rôles (admin, chef de projet, membre).</p>
+                            <p><strong>Détails :</strong> Développement d'une interface en PHP connectée à une base de données PostgreSQL. Implémentation de l'authentification sécurisée et de la logique de permissions.</p>
+                        </div>
+                    </div>
+                    <!-- Ajoutez les autres projets sur ce modèle -->
                 </div>
-                <div class="project-details" id="project1">
-                    <div class="details-section">
-                        <h5>Objectifs</h5>
-                        <ul>
-                            <li>Créer un réseau local autonome</li>
-                            <li>Attribution IP dynamique et centralisée</li>
-                            <li>Résolution noms interne sans DNS externe</li>
-                            <li>Maîtrise du dépannage réseau</li>
-                        </ul>
-                    </div>
+            </div>
+        </section>
 
-                    <div class="details-section">
-                        <h5>Aspects techniques & défis</h5>
-                        <p>Installation ISC-DHCP-SERVER + BIND9 sur Debian 12 / Kali. Configuration subnets, pools, zones forward/reverse, DDNS. Défis : syntaxe zones (named-checkzone), permissions fichiers (apparmor/systemd), conflits baux (deny unknown-clients).</p>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Captures d'écran</h5>
-                        <div class="gallery-grid">
-                            <img src="captures/dhcp-conf.png" alt="Fichier dhcpd.conf" class="clickable-img" data-full="captures/dhcp-conf-full.png" loading="lazy">
-                            <img src="captures/bind-zone.png" alt="Zone BIND db.monlan.local" class="clickable-img" data-full="captures/bind-zone-full.png" loading="lazy">
-                            <img src="captures/dig-test.png" alt="Test dig & nslookup" class="clickable-img" data-full="captures/dig-test-full.png" loading="lazy">
-                            <img src="captures/journalctl-bind.png" alt="Logs BIND9" class="clickable-img" data-full="captures/journalctl-bind-full.png" loading="lazy">
+        <!-- SECTION ENGAGEMENTS -->
+        <section id="engagements" class="section fade-in">
+            <div class="container">
+                <h2>Mes Engagements</h2>
+                <p class="intro-section">Au-delà de la technique, je m’implique dans des projets qui ont du sens et développent des compétences humaines essentielles.</p>
+                <div class="engagements-grid">
+                    <div class="engagement-card">
+                        <div class="engagement-content">
+                            <h3>Bénévole – Association Linké</h3>
+                            <span class="periode">2023 – 2025</span>
+                            <p>Coordination logistique et animation d’événements pour la mobilité douce sur le campus.</p>
+                            <div class="badges-soft"><span>Logistique</span><span>Communication</span></div>
                         </div>
                     </div>
-
-                    <div class="details-section">
-                        <h5>Compétences démontrées</h5>
-                        <div class="skills-badges">
-                            <span>Administration Linux avancée</span>
-                            <span>Gestion systemd</span>
-                            <span>Configuration DHCP ISC</span>
-                            <span>DNS autoritaire BIND9</span>
-                            <span>Dépannage réseau (dig, tcpdump)</span>
-                            <span>Documentation technique</span>
+                    <div class="engagement-card">
+                        <div class="engagement-content">
+                            <h3>Bénévole – Épicerie Solidaire</h3>
+                            <span class="periode">2024 – Présent</span>
+                            <p>Gestion des stocks, accueil des bénéficiaires et sensibilisation à la précarité alimentaire.</p>
+                            <div class="badges-soft"><span>Organisation</span><span>Solidarité</span></div>
                         </div>
                     </div>
-
-                    <div class="details-section">
-                        <h5>Preuves & Activités connexes</h5>
-                        <ul class="proof-list">
-                            <li>Bénévolat Linké (2023–2025) : Gestion flotte vélos + coordination événements → organisation & travail d'équipe</li>
-                            <li>Épicerie solidaire Rayon Capitole (2024–présent) : Accueil bénéficiaires → écoute & service public</li>
-                            <li>Sonorisateur paroissiale Notre-Dame de la Dorade (2023–présent) : Installation sono live → réactivité technique</li>
-                        </ul>
+                    <div class="engagement-card">
+                        <div class="engagement-content">
+                            <h3>Monteur Son & Micros</h3>
+                            <span class="periode">2023 – Présent</span>
+                            <p>Responsable technique bénévole pour des événements (messes, concerts, conférences).</p>
+                            <div class="badges-soft"><span>Technique</span><span>Réactivité</span></div>
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Projet 2 -->
-            <div class="project-item">
-                <div class="project-header clickable" data-toggle="project2">
-                    <h4>Plateforme de gestion de projets multi-rôles (PostgreSQL)</h4>
-                    <p>Suivi tâches – rôles admin/chef/membre – estimation & alertes retard</p>
-                    <div class="badges">
-                        <span class="badge">PostgreSQL</span><span class="badge">PHP</span><span class="badge">Multi-rôles</span>
-                    </div>
-                    <i class="fas fa-chevron-down arrow"></i>
-                </div>
-                <div class="project-details" id="project2">
-                    <div class="details-section">
-                        <h5>Objectifs</h5>
-                        <ul>
-                            <li>Suivi collaboratif de projets scolaires</li>
-                            <li>Gestion rôles clairs (admin, chef, membre)</li>
-                            <li>Estimation automatique & alertes retard</li>
-                            <li>Sécurité authentification & traçabilité</li>
-                        </ul>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Aspects techniques & défis</h5>
-                        <p>PostgreSQL (schéma relationnel, rôles DB, triggers), PHP 8 (PDO, sessions bcrypt), Bootstrap responsive. Défis : concurrence modifications → verrouillage optimiste + historique logs.</p>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Captures d'écran</h5>
-                        <div class="gallery-grid">
-                            <img src="captures/gestion-dashboard.png" alt="Dashboard chef projet" class="clickable-img" data-full="captures/gestion-dashboard-full.png">
-                            <img src="captures/gestion-taches.png" alt="Liste tâches multi-rôles" class="clickable-img" data-full="captures/gestion-taches-full.png">
-                            <img src="captures/alerte-retard.png" alt="Alerte retard colorée" class="clickable-img" data-full="captures/alerte-retard-full.png">
-                        </div>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Compétences démontrées</h5>
-                        <div class="skills-badges">
-                            <span>PostgreSQL (schéma & rôles)</span>
-                            <span>PHP sécurisé (PDO, bcrypt)</span>
-                            <span>Authentification multi-rôles</span>
-                            <span>Interface responsive</span>
-                            <span>Logique estimation & alertes</span>
-                        </div>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Preuves & Activités connexes</h5>
-                        <ul class="proof-list">
-                            <li>Coordination événements Linké → gestion planning & tâches multiples</li>
-                            <li>Accueil bénéficiaires Épicerie Rayon Capitole → traçabilité dons & bénéficiaires</li>
-                            <li>Sonorisateur paroissiale → anticipation besoins & coordination équipe technique</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Projet 3 -->
-            <div class="project-item">
-                <div class="project-header clickable" data-toggle="project3">
-                    <h4>Système d’authentification sécurisé multi-profils</h4>
-                    <p>Login sécurisé – sessions – protection injections & brute-force</p>
-                    <div class="badges">
-                        <span class="badge">PHP Sessions</span><span class="badge">Sécurité Web</span>
-                    </div>
-                    <i class="fas fa-chevron-down arrow"></i>
-                </div>
-                <div class="project-details" id="project3">
-                    <div class="details-section">
-                        <h5>Objectifs</h5>
-                        <ul>
-                            <li>Module authentification réutilisable</li>
-                            <li>Gestion rôles avec redirection intelligente</li>
-                            <li>Protection contre attaques courantes</li>
-                            <li>Interface responsive multi-appareils</li>
-                        </ul>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Aspects techniques & défis</h5>
-                        <p>PHP sessions + régénération ID, protection XSS/injection (htmlspecialchars, PDO), limite tentatives login. Défis : sécurisation brute-force → captcha + lockout.</p>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Captures d'écran</h5>
-                        <div class="gallery-grid">
-                            <img src="captures/login-page.png" alt="Page login" class="clickable-img" data-full="captures/login-page-full.png">
-                            <img src="captures/dashboard-admin.png" alt="Dashboard admin" class="clickable-img" data-full="captures/dashboard-admin-full.png">
-                            <img src="captures/redirection-role.png" alt="Redirection par rôle" class="clickable-img" data-full="captures/redirection-role-full.png">
-                        </div>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Compétences démontrées</h5>
-                        <div class="skills-badges">
-                            <span>PHP sécurisé</span>
-                            <span>Sessions & régénération ID</span>
-                            <span>Protection XSS/injection</span>
-                            <span>Responsive design</span>
-                            <span>Gestion rôles</span>
-                        </div>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Preuves & Activités connexes</h5>
-                        <ul class="proof-list">
-                            <li>Gestion accès flotte vélos Linké → contrôle rôles utilisateurs</li>
-                            <li>Accueil sécurisé bénéficiaires Rayon Capitole → confidentialité données</li>
-                            <li>Configuration sono paroissiale → gestion accès matériel & équipe</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Projet 4 -->
-            <div class="project-item">
-                <div class="project-header clickable" data-toggle="project4">
-                    <h4>Gestion automatisée scolaire (VBA Excel)</h4>
-                    <p>Bulletins, PV, attestations – génération PDF automatisée</p>
-                    <div class="badges">
-                        <span class="badge">VBA</span><span class="badge">Excel</span><span class="badge">Automatisation</span>
-                    </div>
-                    <i class="fas fa-chevron-down arrow"></i>
-                </div>
-                <div class="project-details" id="project4">
-                    <div class="details-section">
-                        <h5>Objectifs</h5>
-                        <ul>
-                            <li>Automatiser saisie & calcul notes</li>
-                            <li>Générer bulletins/PV officiels</li>
-                            <li>Ajout signature/cachet PDF</li>
-                            <li>Export lots rapide</li>
-                        </ul>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Aspects techniques & défis</h5>
-                        <p>VBA + UserForms, calcul moyennes/classements, export PDF via Print to PDF. Défis : formatage conditionnel & signature dynamique → VBA + images insérées.</p>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Captures d'écran</h5>
-                        <div class="gallery-grid">
-                            <img src="captures/vba-form.png" alt="Formulaire saisie VBA" class="clickable-img" data-full="captures/vba-form-full.png">
-                            <img src="captures/bulletin-genere.png" alt="Bulletin PDF généré" class="clickable-img" data-full="captures/bulletin-genere-full.png">
-                            <img src="captures/pv-classe.png" alt="PV de classe" class="clickable-img" data-full="captures/pv-classe-full.png">
-                        </div>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Compétences démontrées</h5>
-                        <div class="skills-badges">
-                            <span>VBA avancé</span>
-                            <span>Excel macros</span>
-                            <span>UserForms</span>
-                            <span>Génération PDF</span>
-                            <span>Automatisation admin</span>
-                        </div>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Preuves & Activités connexes</h5>
-                        <ul class="proof-list">
-                            <li>Organisation événements Linké → gestion listes participants & stats</li>
-                            <li>Épicerie Rayon Capitole → suivi dons & bénéficiaires (similaire à saisie scolaire)</li>
-                            <li>Sonorisateur → planification matériel & équipe → organisation</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Projet 5 -->
-            <div class="project-item">
-                <div class="project-header clickable" data-toggle="project5">
-                    <h4>Migration Google Maps → Leaflet / OpenStreetMap</h4>
-                    <p>Application VTC – coût 0 – affichage parcours</p>
-                    <div class="badges">
-                        <span class="badge">Leaflet.js</span><span class="badge">OpenStreetMap</span>
-                    </div>
-                    <i class="fas fa-chevron-down arrow"></i>
-                </div>
-                <div class="project-details" id="project5">
-                    <div class="details-section">
-                        <h5>Objectifs</h5>
-                        <ul>
-                            <li>Remplacer API payante Google Maps</li>
-                            <li>Affichage dynamique positions/parcours</li>
-                            <li>Interface fluide & gratuite</li>
-                            <li>Économie 100 % coûts API</li>
-                        </ul>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Aspects techniques & défis</h5>
-                        <p>Leaflet.js + tuiles OSM + OSRM routing. Défis : intégration marqueurs temps réel & tracés → optimisation perf & zoom auto.</p>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Captures d'écran</h5>
-                        <div class="gallery-grid">
-                            <img src="captures/leaflet-carte.png" alt="Carte Leaflet" class="clickable-img" data-full="captures/leaflet-carte-full.png">
-                            <img src="captures/parcours-vtc.png" alt="Tracé parcours" class="clickable-img" data-full="captures/parcours-vtc-full.png">
-                            <img src="captures/marqueurs-dynamiques.png" alt="Marqueurs temps réel" class="clickable-img" data-full="captures/marqueurs-dynamiques-full.png">
-                        </div>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Compétences démontrées</h5>
-                        <div class="skills-badges">
-                            <span>Leaflet.js</span>
-                            <span>OpenStreetMap</span>
-                            <span>API carto gratuite</span>
-                            <span>Front-end JS</span>
-                            <span>Optimisation perf</span>
-                        </div>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Preuves & Activités connexes</h5>
-                        <ul class="proof-list">
-                            <li>Optimisation itinéraires Linké → même logique de parcours</li>
-                            <li>Maraudes cyclistes → connaissance mobilité urbaine</li>
-                            <li>Coordination événements → gestion localisation & logistique</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Projet 6 -->
-            <div class="project-item">
-                <div class="project-header clickable" data-toggle="project6">
-                    <h4>Back-office e-commerce / gestion boutique</h4>
-                    <p>CRUD produits/commandes – stats CA & stock</p>
-                    <div class="badges">
-                        <span class="badge">PHP</span><span class="badge">MySQL</span><span class="badge">CRUD</span>
-                    </div>
-                    <i class="fas fa-chevron-down arrow"></i>
-                </div>
-                <div class="project-details" id="project6">
-                    <div class="details-section">
-                        <h5>Objectifs</h5>
-                        <ul>
-                            <li>Gestion complète produits & fournisseurs</li>
-                            <li>Suivi commandes & statuts</li>
-                            <li>Tableau de bord stats (CA, stock faible)</li>
-                            <li>Facturation PDF</li>
-                        </ul>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Aspects techniques & défis</h5>
-                        <p>PHP + MySQL (~18 tables, jointures, index). Défis : CRUD sécurisé → PDO + validation, stats temps réel → requêtes optimisées.</p>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Captures d'écran</h5>
-                        <div class="gallery-grid">
-                            <img src="captures/backoffice-produits.png" alt="Gestion produits" class="clickable-img" data-full="captures/backoffice-produits-full.png">
-                            <img src="captures/commandes-stats.png" alt="Stats commandes" class="clickable-img" data-full="captures/commandes-stats-full.png">
-                            <img src="captures/facture-pdf.png" alt="Facture PDF" class="clickable-img" data-full="captures/facture-pdf-full.png">
-                        </div>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Compétences démontrées</h5>
-                        <div class="skills-badges">
-                            <span>PHP CRUD</span>
-                            <span>MySQL optimisé</span>
-                            <span>Back-office admin</span>
-                            <span>Génération PDF</span>
-                            <span>Stats & dashboard</span>
-                        </div>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Preuves & Activités connexes</h5>
-                        <ul class="proof-list">
-                            <li>Gestion dons Épicerie Rayon Capitole → suivi stocks & bénéficiaires</li>
-                            <li>Coordination flotte Linké → gestion matériel & stats utilisation</li>
-                            <li>Sono paroissiale → gestion stock matériel technique</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Projet 7 -->
-            <div class="project-item">
-                <div class="project-header clickable" data-toggle="project7">
-                    <h4>Site pédagogique WordPress (Astra + Spectra)</h4>
-                    <p>Site vitrine optimisé – UI/UX pédagogique – mise en production</p>
-                    <div class="badges">
-                        <span class="badge">WordPress</span><span class="badge">UI/UX</span><span class="badge">SEO</span>
-                    </div>
-                    <i class="fas fa-chevron-down arrow"></i>
-                </div>
-                <div class="project-details" id="project7">
-                    <div class="details-section">
-                        <h5>Objectifs</h5>
-                        <ul>
-                            <li>Site vitrine clair & moderne</li>
-                            <li>Facile à maintenir par non-tech</li>
-                            <li>Optimisation perf & SEO</li>
-                            <li>Mise en production complète</li>
-                        </ul>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Aspects techniques & défis</h5>
-                        <p>Thème Astra + Spectra (Gutenberg), compression images, cache, SSL Let’s Encrypt, Yoast SEO. Défis : perf mobile → PageSpeed > 90.</p>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Captures d'écran</h5>
-                        <div class="gallery-grid">
-                            <img src="captures/wordpress-accueil.png" alt="Page d'accueil" class="clickable-img" data-full="captures/wordpress-accueil-full.png">
-                            <img src="captures/wordpress-cours.png" alt="Page cours" class="clickable-img" data-full="captures/wordpress-cours-full.png">
-                            <img src="captures/pagespeed-score.png" alt="Score PageSpeed" class="clickable-img" data-full="captures/pagespeed-score-full.png">
-                        </div>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Compétences démontrées</h5>
-                        <div class="skills-badges">
-                            <span>WordPress admin</span>
-                            <span>UI/UX pédagogique</span>
-                            <span>Optimisation perf</span>
-                            <span>SEO Yoast</span>
-                            <span>Mise en production</span>
-                        </div>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Preuves & Activités connexes</h5>
-                        <ul class="proof-list">
-                            <li>Communication événements Linké → création supports & sensibilisation</li>
-                            <li>Accueil public Épicerie Rayon Capitole → communication claire</li>
-                            <li>Coordination sono paroissiale → gestion planning & communication équipe</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- Lightbox pour agrandir les screenshots -->
-<div id="lightbox" class="lightbox">
-    <button class="lightbox-close">×</button>
-    <img id="lightbox-img" src="" alt="Screenshot agrandi">
-</div>
-
-
-
-
-
-
-
-
-
-<!-- Ajoutez les autres modales de la même façon -->
-
-
-<!-- ======================================================================
-     SECTION ACTIVITÉS & ENGAGEMENTS ASSOCIATIFS
-     ====================================================================== -->
-<section id="engagements" class="section fade-in">
-    <div class="container">
-        <h2>Mes Engagements & Activités Associatives</h2>
-        <p class="intro-section">
-            Au-delà de mes projets techniques, je m’implique activement dans la vie associative et bénévole depuis plusieurs années. 
-            Ces expériences m’ont permis de développer des compétences transversales essentielles : travail en équipe, gestion de projet, 
-            communication, adaptabilité, sens du service et organisation d’événements. Elles prouvent aussi ma capacité à concilier 
-            études exigeantes et engagement citoyen.
-        </p>
-
-        <div class="engagements-grid">
-
-            <!-- Activité 1 : Linké -->
-            <div class="engagement-card">
-                <div class="engagement-photo" data-full="photos/linke-evenement.jpg">
-                    <img src="photos/linke-evenement-thumb.jpg" alt="Événement mobilité Linké" loading="lazy">
-                    <div class="photo-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
-                <div class="engagement-content">
-                    <h3>Bénévole – Association Linké (Mobilité étudiante)</h3>
-                    <span class="periode">2023 – 2025</span>
-                    <p>
-                        Coordination logistique et animation d’événements de promotion des mobilités douces sur le campus. 
-                        Gestion d’une flotte de vélos partagés, organisation de stands, ateliers réparation et challenges mobilité.
-                    </p>
-                    <p class="soft-skills">
-                        Compétences développées : animation de groupe, gestion logistique, communication grand public, 
-                        organisation d’événements (jusqu’à 150 participants).
-                    </p>
-                    <div class="badges-soft">
-                        <span>Animation</span><span>Logistique</span><span>Communication</span><span>Mobilité durable</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Activité 2 : Épicerie solidaire – Asso Rayon Capitole -->
-            <div class="engagement-card">
-                <div class="engagement-photo" data-full="photos/epicerie-rayon.jpg">
-                    <img src="photos/epicerie-rayon-thumb.jpg" alt="Épicerie solidaire Rayon Capitole" loading="lazy">
-                    <div class="photo-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
-                <div class="engagement-content">
-                    <h3>Bénévole – Épicerie solidaire Asso Rayon Capitole<br>(Université Toulouse Capitole)</h3>
-                    <span class="periode">2024 – présent</span>
-                    <p>
-                        Participation active à la gestion de l’épicerie solidaire étudiante : réception des dons, tri, mise en rayon, 
-                        accueil des bénéficiaires, tenue de caisse, sensibilisation à la précarité alimentaire.
-                    </p>
-                    <p class="soft-skills">
-                        Compétences développées : écoute active, gestion du stress, travail en équipe pluridisciplinaire, 
-                        solidarité et inclusion sociale.
-                    </p>
-                    <div class="badges-soft">
-                        <span>Solidarité</span><span>Accueil public</span><span>Organisation</span><span>Écoute</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Activité 3 : Sonorisateur paroissial -->
-            <div class="engagement-card">
-                <div class="engagement-photo" data-full="photos/sono-dorade.jpg">
-                    <img src="photos/sono-dorade-thumb.jpg" alt="Installation sono Notre-Dame de la Dorade" loading="lazy">
-                    <div class="photo-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
-                <div class="engagement-content">
-                    <h3>Monteur son & micros – Paroisse étudiante Notre-Dame de la Dorade</h3>
-                    <span class="periode">2023 – présent</span>
-                    <p>
-                        Responsable technique bénévole pour les messes, concerts, conférences et célébrations : 
-                        installation micros HF, tables de mixage analogiques/numériques, enceintes, retour scène, 
-                        gestion feedback et équilibrage sonore en live (jusqu’à 400 personnes).
-                    </p>
-                    <p class="soft-skills">
-                        Compétences développées : technique son, réactivité en situation réelle, anticipation pannes, 
-                        travail sous pression, sens du service et discrétion.
-                    </p>
-                    <div class="badges-soft">
-                        <span>Son & technique</span><span>Réactivité</span><span>Gestion live</span><span>Service</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Activité 4 : Cycliste bénévole (optionnel si tu veux en rajouter une) -->
-            <div class="engagement-card">
-                <div class="engagement-photo" data-full="photos/velo-linke.jpg">
-                    <img src="photos/velo-linke-thumb.jpg" alt="Distribution Linké à vélo" loading="lazy">
-                    <div class="photo-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
-                <div class="engagement-content">
-                    <h3>Cycliste bénévole – Linké & autres collectifs</h3>
-                    <span class="periode">2024 – présent</span>
-                    <p>
-                        Participation à des maraudes solidaires, distributions alimentaires et événements éco-citoyens à vélo. 
-                        Entretien et petit réglage mécanique des vélos collectifs.
-                    </p>
-                    <p class="soft-skills">
-                        Engagement écologique, endurance physique, sens de l’initiative, adaptabilité terrain.
-                    </p>
-                    <div class="badges-soft">
-                        <span>Mobilité douce</span><span>Solidarité</span><span>Mécanique vélo</span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="engagements-conclusion">
-            <p>
-                Ces engagements m’ont appris à travailler avec des publics très variés, à gérer des imprévus, à coordonner des équipes 
-                et à m’investir durablement dans des projets collectifs – des qualités que je mets aussi au service de mes projets techniques.
-            </p>
-        </div>
-    </div>
-</section>
-
-<!-- Lightbox réutilisable pour agrandir les photos des activités -->
-<div id="lightbox" class="lightbox" aria-hidden="true">
-    <button class="lightbox-close" aria-label="Fermer">×</button>
-    <img id="lightbox-img" src="" alt="Photo agrandie">
-    <div id="lightbox-caption"></div>
-</div>
-
-
-    <!-- ==================== SECTION CONTACT – VERSION FONCTIONNELLE ==================== -->
-<section id="contact" class="section fade-in">
-    <div class="container">
-        <h2>Me contacter – Alternance / Stage / Collaboration</h2>
-
-        <p class="lead">
-            Je recherche activement une <strong>alternance longue durée (1 à 2 ans)</strong> ou un stage significatif à partir de 
-            <strong>septembre 2026</strong> ou <strong>janvier 2027</strong>.<br>
-            N’hésitez pas à m’écrire directement via le formulaire ci-dessous — votre message arrivera instantanément dans ma boîte mail.
-        </p>
-
-        <div class="contact-layout">
-            <!-- Colonne infos rapides -->
-            <div class="contact-info-column">
-                <div class="contact-method">
-                    <i class="fas fa-envelope"></i>
-                    <div>
-                        <h4>Email principal</h4>
-                        <p><a href="mailto:brindel.ndengue@example.fr">brindel.ndengue@example.fr</a></p>
-                        <small>Réponse habituelle sous 24–48 h</small>
-                    </div>
-                </div>
-
-                <div class="contact-method">
-                    <i class="fab fa-linkedin"></i>
-                    <div>
-                        <h4>LinkedIn (recommandé pour les recruteurs)</h4>
-                        <p><a href="https://www.linkedin.com/in/brindel-ndengue/" target="_blank" rel="noopener">linkedin.com/in/brindel-ndengue</a></p>
-                        <small>Profil à jour – ouvert aux messages InMail</small>
-                    </div>
-                </div>
-
-                <div class="contact-method">
-                    <i class="fab fa-github"></i>
-                    <div>
-                        <h4>GitHub</h4>
-                        <p><a href="https://github.com/brindelndengue" target="_blank" rel="noopener">github.com/brindelndengue</a></p>
-                        <small>Scripts, labs réseaux, projets perso</small>
-                    </div>
-                </div>
-
-                <div class="contact-availability">
-                    <h4>Disponibilités</h4>
-                    <ul>
-                        <li>Alternance : dès septembre 2026 ou janvier 2027</li>
-                        <li>Rythme idéal : 3 jours entreprise / 2 jours école (ou inversé)</li>
-                        <li>Mobilité : Île-de-France principalement – remote partiel envisageable</li>
-                        <li>Durée souhaitée : 12 à 24 mois</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Colonne formulaire -->
-            <div class="contact-form-column">
-                <div class="form-wrapper">
-                    <h3>Envoyer un message</h3>
-
-                    <form id="realContactForm" 
-                          action="https://formspree.io/f/VOTRE_CODE_FORMSPREE_ICI" 
-                          method="POST"
-                          class="contact-form">
-
-                        <!-- Champs obligatoires -->
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="sender-name">Votre nom / prénom <span class="required">*</span></label>
-                                <input type="text" 
-                                       id="sender-name" 
-                                       name="Nom" 
-                                       placeholder="Ex : Marie Dupont" 
-                                       required 
-                                       minlength="2"
-                                       aria-required="true">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="sender-email">Votre email <span class="required">*</span></label>
-                                <input type="email" 
-                                       id="sender-email" 
-                                       name="Email" 
-                                       placeholder="exemple@entreprise.com" 
-                                       required 
-                                       aria-required="true">
+        <!-- SECTION CONTACT -->
+        <section id="contact" class="section fade-in">
+            <div class="container">
+                <h2>Me contacter</h2>
+                <p class="lead">Je recherche une alternance pour 2026-2027. Contactez-moi via ce formulaire ou mes réseaux.</p>
+                <div class="contact-layout">
+                    <div class="contact-info-column">
+                        <div class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p><a href="mailto:brindelndengue8@gmail.com">brindelndengue8@gmail.com</a></p>
                             </div>
                         </div>
-
-                        <div class="form-group">
-                            <label for="subject">Sujet du message <span class="required">*</span></label>
-                            <select id="subject" name="Sujet" required aria-required="true">
-                                <option value="" disabled selected>Choisissez une option</option>
-                                <option value="alternance-2026">Proposition d’alternance 2026–2027</option>
-                                <option value="stage-long">Stage long / immersion</option>
-                                <option value="stage-court">Stage court / découverte</option>
-                                <option value="cdi-apprenti">Proposition CDI apprenti / futur</option>
-                                <option value="question-tech">Question technique / avis</option>
-                                <option value="autre">Autre demande</option>
-                            </select>
+                        <div class="contact-method">
+                            <i class="fab fa-linkedin"></i>
+                            <div>
+                                <h4>LinkedIn</h4>
+                                <p><a href="https://www.linkedin.com/in/brindel-ndengue/" target="_blank" rel="noopener">/in/brindel-ndengue</a></p>
+                            </div>
                         </div>
-
-                        <div class="form-group">
-                            <label for="company">Entreprise / Organisation (facultatif)</label>
-                            <input type="text" 
-                                   id="company" 
-                                   name="Entreprise" 
-                                   placeholder="Ex : Orange, Thales, OVHcloud, SSII...">
+                        <div class="contact-method">
+                            <i class="fab fa-github"></i>
+                            <div>
+                                <h4>GitHub</h4>
+                                <p><a href="https://github.com/BrindelNDENGUE8" target="_blank" rel="noopener">/BrindelNDENGUE8</a></p>
+                            </div>
                         </div>
-
-                        <div class="form-group">
-                            <label for="message">Votre message <span class="required">*</span></label>
-                            <textarea id="message" 
-                                      name="Message" 
-                                      rows="8" 
-                                      placeholder="Décrivez votre besoin, le poste, la localisation, le rythme envisagé, les technologies principales de votre infra, etc." 
-                                      required 
-                                      minlength="20"
-                                      aria-required="true"></textarea>
-                        </div>
-
-                        <!-- Honeypot anti-spam (invisible) -->
-                        <input type="text" name="_gotcha" style="display:none" aria-hidden="true">
-
-                        <div class="form-actions">
-                            <button type="submit" class="btn-primary" id="submitBtn">
-                                <span class="btn-text">Envoyer le message</span>
-                                <span class="btn-loading" style="display:none">Envoi...</span>
-                            </button>
-                            <div id="formMessage" class="form-feedback" aria-live="polite"></div>
-                        </div>
-                    </form>
+                    </div>
+                    <div class="contact-form-column">
+                        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                            <input type="hidden" name="apikey" value="REMPLACER_PAR_VOTRE_CLE_API_WEB3FORMS">
+                            <div class="form-row">
+                                <div class="form-group"><label for="sender-name">Nom</label><input type="text" id="sender-name" name="Nom" required></div>
+                                <div class="form-group"><label for="sender-email">Email</label><input type="email" id="sender-email" name="Email" required></div>
+                            </div>
+                            <div class="form-group"><label for="message">Message</label><textarea id="message" name="Message" rows="6" required></textarea></div>
+                            <div class="form-actions"><button type="submit" class="btn-primary" id="submitBtn">Envoyer</button></div>
+                            <div id="formMessage" class="form-feedback"></div>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <div class="contact-footer-note">
-            <p>Tous les messages sont reçus directement dans ma boîte mail personnelle.<br>
-            Aucune donnée n’est stockée sur le site – confidentialité respectée.</p>
-        </div>
-    </div>
-</section>
+        </section>
+    </main>
 
     <footer>
         <p>© 2026 Brindel Ndengue – Portfolio Technicien Supérieur Réseaux & Systèmes</p>
     </footer>
+
+    <!-- Lightbox (pour les images des projets ) -->
+    <div id="lightbox" class="lightbox">
+        <button class="lightbox-close" aria-label="Fermer la vue agrandie">×</button>
+        <img id="lightbox-img" src="" alt="Screenshot agrandi">
+    </div>
 
     <script src="script.js"></script>
 </body>
