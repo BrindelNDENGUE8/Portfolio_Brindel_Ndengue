@@ -50,8 +50,8 @@ Actuellement en Bachelor 2 Réseaux & Systèmes Informatiques, j'explore les tec
 ## 🌐 Où me trouver
 
 - **Portfolio live** → [https://brindelndengue8.github.io/Portfolio_Brindel_Ndengue/](https://brindelndengue8.github.io/Portfolio_Brindel_Ndengue/)  
-- **LinkedIn** → [linkedin.com/in/brindel-ndengue](https://www.linkedin.com/in/brindel-ndengue/)  
-- **Email** → brindel.ndengue@example.com (remplace par ton vrai email)
+- **LinkedIn** → [https://www.linkedin.com/in/brindel-ndengue-788574335/](https://www.linkedin.com/in/brindel-ndengue-788574335/)  
+- **Email** → brindelndengue8@gmail.com (remplace par ton vrai email)
 
 ---
 
