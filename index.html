@@ -1,1128 +1,1387 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <!-- Métadonnées essentielles pour le navigateur et le référencement -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Brindel Ndengue – Portfolio | Technicien Réseaux & Systèmes Informatiques</title>
+    <title>Brindel Ndengue | Portfolio Technicien Réseaux & Systèmes</title>
+
+    <!-- Favicon pour une meilleure identité visuelle dans les onglets du navigateur -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
+    
+    <!-- Lien vers la feuille de style principale pour la mise en forme visuelle -->
     <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Importation des polices Google Fonts pour une typographie moderne et lisible -->
+    <!-- Inter pour le corps de texte et Poppins pour les titres, assurant une hiérarchie visuelle claire -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Intégration de Font Awesome pour les icônes vectorielles, améliorant l'esthétique et l'UX -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Métadonnées Open Graph et Twitter Card pour un meilleur partage sur les réseaux sociaux -->
+    <!-- Ces balises contrôlent l'affichage des aperçus de liens sur des plateformes comme Facebook, LinkedIn et Twitter -->
+    <meta property="og:title" content="Brindel Ndengue | Portfolio Technicien Réseaux & Systèmes" />
+    <meta property="og:description" content="Découvrez le portfolio de Brindel Ndengue, étudiant en Réseaux & Systèmes Informatiques, spécialisé en administration Linux, services réseaux et automatisation. Recherche alternance 2026-2027." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.votreportfolio.com" /> <!-- IMPORTANT: À remplacer par l'URL réelle de votre portfolio -->
+    <meta property="og:image" content="https://www.votreportfolio.com/social-share.png" /> <!-- Placeholder pour l'image de partage, à remplacer -->
+    <meta property="og:image:alt" content="Brindel Ndengue Portfolio" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Brindel Ndengue | Portfolio Technicien Réseaux & Systèmes" />
+    <meta name="twitter:description" content="Découvrez le portfolio de Brindel Ndengue, étudiant en Réseaux & Systèmes Informatiques, spécialisé en administration Linux, services réseaux et automatisation. Recherche alternance 2026-2027." />
+    <meta name="twitter:image" content="https://www.votreportfolio.com/social-share.png" /> <!-- Placeholder pour l'image de partage, à remplacer -->
+    <meta name="twitter:creator" content="@BrindelNdengue" /> <!-- À remplacer par votre handle Twitter si applicable -->
+
+    <!-- Métadonnées SEO supplémentaires pour optimiser le référencement naturel -->
+    <meta name="description" content="Portfolio professionnel de Brindel Ndengue, expert en administration Linux, services réseaux (DHCP, DNS, BIND), automatisation et cybersécurité. Recherche alternance en réseaux et systèmes informatiques." />
+    <meta name="keywords" content="Brindel Ndengue, portfolio, réseaux, systèmes, informatique, alternance, Linux, DHCP, DNS, BIND, automatisation, cybersécurité, étudiant, bachelor, ingénieur, IT, infrastructure" />
+    <meta name="author" content="Brindel Ndengue" />
+    <meta name="robots" content="index, follow" /> <!-- Indique aux moteurs de recherche d'indexer et de suivre les liens -->
+    <link rel="canonical" href="https://www.votreportfolio.com" /> <!-- IMPORTANT: À remplacer par l'URL canonique de votre portfolio -->
 </head>
 <body class="light-mode">
+    <!-- Conteneur pour les bulles d'arrière-plan animées (purement décoratif et visuel) -->
+    <!-- Ces bulles ajoutent une touche de dynamisme subtile à l'arrière-plan -->
+    <div class="bubbles-container" aria-hidden="true"></div>
 
-    <!-- Bulles animées (augmenté à 35 bulles dans le script) -->
-    <div class="bubbles-container"></div>
-
-<!-- Navigation améliorée – minimaliste mais chaleureuse -->
-<nav class="navbar">
-    <div class="nav-content">
-        <div class="logo">
-            Brindel Ndengue
-            <span class="logo-dot">.</span>
+    <!-- Navigation principale du site, accessible et responsive -->
+    <nav class="navbar" aria-label="Navigation principale">
+        <div class="nav-content container">
+            <!-- Logo et nom du portfolio, servant également de lien vers la section d'accueil -->
+            <div class="logo">
+                <a href="#hero" aria-label="Retour à la section d'accueil">
+                    Brindel Ndengue<span class="logo-dot">.</span>
+                </a>
+            </div>
+            
+            <!-- Bouton de bascule pour la navigation mobile (hamburger menu) -->
+            <!-- Amélioré avec des attributs ARIA pour l'accessibilité -->
+            <button class="nav-toggle" aria-label="Ouvrir le menu de navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <!-- Liens de navigation principaux -->
+            <!-- Inclut une nouvelle section "Compétences" pour une meilleure organisation -->
+            <div class="nav-links" id="main-nav-links">
+                <a href="#about" class="nav-link">À propos</a>
+                <a href="#skills" class="nav-link">Compétences</a> <!-- Nouvelle section ajoutée -->
+                <a href="#projects" class="nav-link">Projets</a>
+                <a href="#experiences" class="nav-link">Parcours</a> <!-- Renommé pour plus de clarté -->
+                <a href="#engagements" class="nav-link">Engagements</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <a href="cv.pdf" class="btn-cv-nav" target="_blank" rel="noopener noreferrer">CV PDF <i class="fas fa-download"></i></a>
+            </div>
+            
+            <!-- Bouton de bascule du thème (clair/sombre) pour une personnalisation de l'interface -->
+            <button id="theme-toggle" class="theme-btn" aria-label="Basculer le thème clair/sombre">
+                <i class="fas fa-moon"></i>
+            </button>
         </div>
+    </nav>
 
-        <div class="nav-links">
-            <a href="#about">À propos</a>
-            <a href="#projects">Projets</a>
-            <a href="#engagements">Engagements</a>
-            <a href="#contact">Contact</a>
-            <a href="cv.pdf" target="_blank" class="btn-cv">CV PDF</a>
-        </div>
+    <!-- Contenu principal de la page, structuré en sections sémantiques -->
+    <main id="main-content">
+        <!-- Section d'introduction (Hero Section) - Première impression du visiteur -->
+        <header id="hero" class="section-hero">
+            <div class="hero-wrapper container">
+                <!-- Conteneur pour la photo de profil (sans image réelle, remplacée par un placeholder stylisé) -->
+                <div class="hero-photo-container" aria-label="Illustration de profil">
+                    <div class="photo-frame">
+                        <!-- Placeholder pour l'image de profil, affichant les initiales "BN" -->
+                        <div class="profile-pic-placeholder" aria-hidden="true"></div>
+                    </div>
+                </div>
 
-        <button id="theme-toggle" class="theme-btn" aria-label="Changer de thème">
-            <i class="fas fa-moon"></i>
-        </button>
-    </div>
-</nav>
+                <!-- Informations d'identité et titre professionnel -->
+                <div class="hero-identity">
+                    <h1 class="name">Brindel Ndengue</h1>
+                    <div class="main-title-container">
+                        <h2 class="title-text">Étudiant Bachelor 2 •<br>Réseaux & Systèmes<br>Informatiques</h2>
+                        <div class="blue-separator"></div>
+                    </div>
+                </div>
 
-<main>
+                <!-- Détails et appels à l'action principaux -->
+                <div class="hero-details">
+                    <p class="description">
+                        Administration Linux • Services réseaux (DHCP, DNS, BIND) • Automatisation & Sécurité
+                    </p>
+                    <p class="hiring-tag">Recherche alternance 2026–2027</p>
+                    
+                    <div class="hero-btns">
+                        <a href="#contact" class="btn-main">Me contacter <i class="fas fa-envelope"></i></a>
+                        <a href="cv.pdf" class="btn-sub" target="_blank" rel="noopener noreferrer">Télécharger CV <i class="fas fa-download"></i></a>
+                    </div>
 
-    <!-- Hero – épuré mais plus vivant -->
-    <header id="hero">
-        <div class="hero-content">
-            <div class="hero-photo">
-                <div class="photo-frame">
-                    <img src="profile.png" alt="Brindel Ndengue" class="profile-pic" loading="lazy">
+                    <!-- Statistiques clés pour mettre en avant les réalisations -->
+                    <div class="hero-counters">
+                        <div class="stat-box">
+                            <span class="count" data-target="10">0</span>
+                            <span class="label">projets réalisés</span>
+                        </div>
+                        <div class="stat-box accent">
+                            <span class="sub-label">Disponible dès</span>
+                            <span class="year">2026</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <h1>Brindel Ndengue</h1>
-            <h2>Étudiant Bachelor 2 • Réseaux & Systèmes Informatiques</h2>
-
-            <p class="tagline">
-                Administration Linux • Services réseaux (DHCP, DNS, BIND) • Automatisation & Sécurité<br>
-                <span class="highlight-text">Recherche alternance 2026–2027</span>
-            </p>
-
-            <div class="hero-actions">
-                <a href="#contact" class="btn-primary">Me contacter</a>
-                <a href="cv.pdf" target="_blank" class="btn-outline">Télécharger CV</a>
-            </div>
-
-            <div class="hero-stats-simple">
-                <div class="stat-item">
-                    <span class="counter" data-target="10">0</span>
-                    <span>projets réalisés</span>
-                </div>
-                <div class="stat-item stat-accent">
-                    <span>Disponible dès</span>
-                    <span class="year">2026</span>
-                </div>
-            </div>
-        </div>
         </header>
+        
+        <!-- Section À propos - Présentation détaillée du profil et des motivations -->
+        <section id="about" class="section fade-in" aria-labelledby="about-heading">
+            <div class="container">
+                <h2 id="about-heading">Qui suis-je ?</h2>
+                <p>Actuellement en deuxième année de Bachelor Réseaux et Systèmes Informatiques, je développe une expertise concrète en administration d’infrastructures IT, configuration de services réseaux essentiels et automatisation de tâches répétitives ou chronophages.</p>
+                <p>Mon intérêt pour les technologies réseaux est né très tôt : comprendre comment les données circulent, comment sécuriser ces flux et comment rendre un système fiable et scalable me passionne au quotidien.</p>
+                <p>J’aime particulièrement travailler en environnement Linux (Debian, Ubuntu, Kali pour les aspects sécurité), configurer des services comme DHCP, DNS (BIND), serveurs web, et automatiser des processus via scripts Bash, Python ou même VBA lorsque le contexte l’exige (gestion administrative, reporting).</p>
+                <p>En parallèle de mes études, je réalise des projets personnels et académiques ambitieux, je contribue occasionnellement à des dépôts open-source, et je me forme en continu via des plateformes (Coursera, Cisco Networking Academy, TryHackMe, etc.).</p>
+                <p>Mon profil se distingue par :</p>
+                <ul>
+                    <li>Une approche très orientée résolution de problèmes concrets</li>
+                    <li>Une capacité à documenter clairement mes démarches (schémas, README détaillés, rapports)</li>
+                    <li>Une curiosité qui me pousse à tester des solutions open-source avant les solutions propriétaires coûteuses</li>
+                    <li>Une bonne communication technique (rédaction de procédures, présentations orales de projets)</li>
+                </ul>
+                <p class="highlight">Objectif professionnel 2026–2028 : devenir un administrateur systèmes & réseaux fiable, polyvalent, capable d’intervenir sur l’infrastructure physique, virtuelle et cloud, tout en montant progressivement vers des rôles DevOps / cybersécurité.</p>
 
-        <section id="about" class="section fade-in">
-            <h2>Qui suis-je ?</h2>
-            <p>Actuellement en deuxième année de Bachelor Réseaux et Systèmes Informatiques, je développe une expertise concrète en administration d’infrastructures IT, configuration de services réseaux essentiels et automatisation de tâches répétitives ou chronophages.</p>
-            <p>Mon intérêt pour les technologies réseaux est né très tôt : comprendre comment les données circulent, comment sécuriser ces flux et comment rendre un système fiable et scalable me passionne au quotidien.</p>
-            <p>J’aime particulièrement travailler en environnement Linux (Debian, Ubuntu, Kali pour les aspects sécurité), configurer des services comme DHCP, DNS (BIND), serveurs web, et automatiser des processus via scripts Bash, Python ou même VBA lorsque le contexte l’exige (gestion administrative, reporting).</p>
-            <p>En parallèle de mes études, je réalise des projets personnels et académiques ambitieux, je contribue occasionnellement à des dépôts open-source, et je me forme en continu via des plateformes (Coursera, Cisco Networking Academy, TryHackMe, etc.).</p>
-            <p>Mon profil se distingue par :</p>
-            <ul>
-                <li>Une approche très orientée résolution de problèmes concrets</li>
-                <li>Une capacité à documenter clairement mes démarches (schémas, README détaillés, rapports)</li>
-                <li>Une curiosité qui me pousse à tester des solutions open-source avant les solutions propriétaires coûteuses</li>
-                <li>Une bonne communication technique (rédaction de procédures, présentations orales de projets)</li>
-            </ul>
-            <p class="highlight">Objectif professionnel 2026–2028 : devenir un administrateur systèmes & réseaux fiable, polyvalent, capable d’intervenir sur l’infrastructure physique, virtuelle et cloud, tout en montant progressivement vers des rôles DevOps / cybersécurité.</p>
-        </section>
+                <!-- Citation inspirante ou philosophie de travail pour ajouter une touche personnelle -->
+                <blockquote class="quote">
+                    <p>« La meilleure façon de prédire l'avenir est de le créer. »</p>
+                    <footer>— Peter Drucker</footer>
+                </blockquote>
 
-        <section id="experiences" class="section fade-in">
-            <h2>Parcours & Expériences</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
-                    <div class="timeline-content">
-                        <h3>Bachelor 2 Réseaux et Systèmes Informatiques</h3>
-                        <span>2024 – 2026 (en cours) | [Nom de l’établissement]</span>
-                        <p>Formation professionnalisante axée sur l’administration réseaux et systèmes, la cybersécurité de base, la virtualisation et les fondamentaux du cloud.</p>
-                        <p>Principaux modules suivis :</p>
-                        <ul>
-                            <li>Administration Linux avancée (gestion services, utilisateurs, SELinux, firewalling)</li>
-                            <li>Réseaux : TCP/IP approfondi, commutation, routage, VLAN, NAT, DHCP, DNS</li>
-                            <li>Sécurité : principes cryptographiques, pare-feu stateful, détection d’intrusions</li>
-                            <li>Bases de données : PostgreSQL et MySQL (modélisation, requêtes complexes, administration)</li>
-                            <li>Virtualisation & conteneurs : VMware, VirtualBox, Docker basics</li>
-                        </ul>
-                        <p>Moyenne actuelle : 14,8/20 – Mention Bien espérée en fin de Bachelor 2.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
-                    <div class="timeline-content">
-                        <h3>Stage – Assistant Support & Réseaux</h3>
-                        <span>Juillet–Août 2025 | [Nom entreprise ou "Stage académique"]</span>
-                        <p>Missions réalisées :</p>
-                        <ul>
-                            <li>Support niveau 1/2 : résolution ~65 tickets utilisateurs (Windows, bureautique, imprimantes réseau)</li>
-                            <li>Configuration et extension réseau Wi-Fi (ajout points d’accès, optimisation couverture)</li>
-                            <li>Participation à la migration d’un serveur DHCP vers une nouvelle plage IP</li>
-                            <li>Documentation de procédures internes (création de 12 fiches techniques)</li>
-                            <li>Premiers pas sur Active Directory : création utilisateurs/groupes, délégation droits</li>
-                        </ul>
-                        <p>Résultats mesurables : réduction de 22 % du temps moyen de résolution des tickets Wi-Fi grâce à une meilleure cartographie et configuration des canaux.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-icon"><i class="fas fa-laptop-code"></i></div>
-                    <div class="timeline-content">
-                        <h3>Projets personnels & auto-formation continue</h3>
-                        <span>2023 – aujourd’hui</span>
-                        <p>Activités régulières :</p>
-                        <ul>
-                            <li>Mise en place de laboratoires virtuels (GNS3, VirtualBox, Proxmox) pour tester configurations réseaux</li>
-                            <li>Participation à 4 CTF / challenges sécurité (TryHackMe, HackTheBox Academy)</li>
-                            <li>Développement et publication de scripts d’automatisation (GitHub)</li>
-                            <li>Suivi de formations en ligne : Cisco CCNA modules, Linux Essentials, Google Cybersecurity, bases AWS</li>
-                        </ul>
-                    </div>
+                <!-- Section additionnelle sur la philosophie de travail ou les valeurs -->
+                <div class="details-section">
+                    <h5>Ma Philosophie de Travail</h5>
+                    <p>Je crois fermement en l'apprentissage continu et en l'importance de la pratique. Chaque défi technique est une opportunité d'acquérir de nouvelles compétences et de renforcer ma compréhension des systèmes complexes. Mon approche est méthodique, axée sur la résolution de problèmes et la recherche de solutions efficaces et durables. Je privilégie également la collaboration et le partage de connaissances, convaincu que les meilleures innovations naissent de l'intelligence collective.</p>
+                    <p>L'éthique et la sécurité sont au cœur de mes préoccupations dans tous les projets que j'entreprends. Je m'efforce de concevoir des systèmes robustes, résilients et protégés contre les menaces potentielles, tout en respectant les meilleures pratiques de l'industrie.</p>
                 </div>
             </div>
         </section>
 
-        <!-- ======================================================================
-     SECTION PROJETS – VERSION INTERACTIVE AVEC MODALES DÉTAILLÉES
-     ====================================================================== -->
+        <!-- Nouvelle Section Compétences Techniques - Présentation structurée des compétences -->
+        <section id="skills" class="section fade-in" aria-labelledby="skills-heading">
+            <div class="container">
+                <h2 id="skills-heading">Mes Compétences Techniques</h2>
+                <p class="intro-section">Voici un aperçu des technologies et domaines dans lesquels j'ai développé une expertise solide, classés par catégories pour une meilleure lisibilité. Cette section met en lumière mon savoir-faire technique et ma capacité à maîtriser divers outils et environnements.</p>
 
-<!-- ======================================================================
-     SECTION PROJETS – ACCORDION COMPLET POUR LES 10 PROJETS (AMÉLIORÉ)
-     ====================================================================== -->
-<section id="projects" class="section fade-in">
-    <div class="container">
-        <h2>Mes Projets</h2>
-        <p class="intro-projects">
-            Cliquez sur chaque carte pour découvrir les objectifs, le contexte, les aspects techniques, les captures d'écran, les compétences et mes engagements associés. J'ai ajouté et amélioré plusieurs projets pour refléter ma diversité en réseaux, sécurité, scripting et développement.
-        </p>
-
-        <div class="projects-accordion">
-
-            <!-- Projet 1 - VPN Site-to-Site -->
-            <div class="project-item">
-                <div class="project-header clickable" data-toggle="project1">
-                    <h4>VPN Site-to-Site (pfSense + Windows Server sous VMware)</h4>
-                    <p>Mise en place d’un VPN entre deux sites virtuels, avec 2 pfSense + 2 Windows Server, routage, IP plan, tests de connectivité (ping), et configuration réseau VMware.</p>
-                    <div class="badges">
-                        <span class="badge">VPN IPsec</span><span class="badge">pfSense</span><span class="badge">VMware</span><span class="badge">Routage</span>
-                    </div>
-                    <i class="fas fa-chevron-down arrow"></i>
-                </div>
-                <div class="project-details" id="project1">
-                    <div class="details-section">
-                        <h5>Objectifs</h5>
+                <div class="skills-grid">
+                    <!-- Catégorie : Systèmes d'exploitation -->
+                    <div class="skill-category">
+                        <h3><i class="fas fa-server"></i> Systèmes d'exploitation</h3>
                         <ul>
-                            <li>Connecter deux sites virtuels de manière sécurisée</li>
-                            <li>Configurer un tunnel IPsec fiable</li>
-                            <li>Assurer le routage et la connectivité inter-sites</li>
-                            <li>Maîtriser la virtualisation pour simuler un environnement réel</li>
+                            <li><strong>Linux:</strong> Debian, Ubuntu, CentOS, Kali Linux (avancé) - Maîtrise de l'administration système, gestion des services, scripting.</li>
+                            <li><strong>Windows Server:</strong> Active Directory, GPO, IIS, DNS, DHCP (intermédiaire) - Configuration et maintenance des infrastructures Windows.</li>
+                            <li><strong>Windows Client:</strong> Dépannage, administration (expert) - Support utilisateur et gestion de parc.</li>
                         </ul>
                     </div>
 
-                    <div class="details-section">
-                        <h5>Aspects techniques & défis</h5>
-                        <p>Configuration pfSense (IPsec tunnels, phases 1/2, PSK, NAT-T), Windows Server (rôles serveur, partage fichiers), VMware (host-only, bridged adapters). Défis : résolution conflits routage, tests failover, optimisation bande passante.</p>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Captures d'écran</h5>
-                        <div class="gallery-grid">
-                            <img src="captures/vpn-pfsense-config.png" alt="Configuration pfSense IPsec" class="clickable-img" data-full="captures/vpn-pfsense-config-full.png" loading="lazy">
-                            <img src="captures/vpn-routage.png" alt="Table de routage" class="clickable-img" data-full="captures/vpn-routage-full.png" loading="lazy">
-                            <img src="captures/vpn-test-ping.png" alt="Test connectivité ping" class="clickable-img" data-full="captures/vpn-test-ping-full.png" loading="lazy">
-                            <img src="captures/vmware-network.png" alt="Configuration réseau VMware" class="clickable-img" data-full="captures/vmware-network-full.png" loading="lazy">
-                        </div>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Compétences démontrées</h5>
-                        <div class="skills-badges">
-                            <span>VPN Site-to-Site (IPsec / tunnel)</span>
-                            <span>Routage, sous-réseaux, passerelles</span>
-                            <span>pfSense (interfaces, firewall, règles)</span>
-                            <span>Virtualisation VMware (Host-only, cartes réseau)</span>
-                            <span>Tests de connectivité et dépannage</span>
-                        </div>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Preuves & Activités connexes</h5>
-                        <ul class="proof-list">
-                            <li>Bénévolat Linké (2023–2025) : Gestion flotte vélos + coordination événements → organisation & travail d'équipe</li>
-                            <li>Épicerie solidaire Rayon Capitole (2024–présent) : Accueil bénéficiaires → écoute & service public</li>
-                            <li>Sonorisateur paroissiale Notre-Dame de la Dorade (2023–présent) : Installation sono live → réactivité technique</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Projet 2 - VTC Express -->
-            <div class="project-item">
-                <div class="project-header clickable" data-toggle="project2">
-                    <h4>Projet “VTC Express” – Carte & géolocalisation (Leaflet / OpenStreetMap)</h4>
-                    <p>Développement d’un module carte pour une application VTC, en remplaçant Google Maps par Leaflet (OpenStreetMap).</p>
-                    <div class="badges">
-                        <span class="badge">Leaflet.js</span><span class="badge">OpenStreetMap</span><span class="badge">Géolocalisation</span>
-                    </div>
-                    <i class="fas fa-chevron-down arrow"></i>
-                </div>
-                <div class="project-details" id="project2">
-                    <div class="details-section">
-                        <h5>Objectifs</h5>
+                    <!-- Catégorie : Réseaux -->
+                    <div class="skill-category">
+                        <h3><i class="fas fa-network-wired"></i> Réseaux</h3>
                         <ul>
-                            <li>Remplacer API payante par alternative gratuite</li>
-                            <li>Affichage dynamique de positions et parcours</li>
-                            <li>Interface fluide et optimisée pour mobile</li>
-                            <li>Économie 100% des coûts API</li>
+                            <li><strong>Protocoles:</strong> TCP/IP, DNS, DHCP, HTTP/S, FTP, SSH, SNMP (avancé) - Compréhension approfondie des mécanismes de communication.</li>
+                            <li><strong>Équipements:</strong> Routeurs, Switchs (Cisco IOS, pfSense), Firewalls (pfSense, iptables) - Configuration et sécurisation des équipements réseau.</li>
+                            <li><strong>Concepts:</strong> Routage statique/dynamique (OSPF, RIP), VLANs, NAT, VPN (IPsec, OpenVPN) - Conception et implémentation d'architectures réseau.</li>
+                            <li><strong>Outils:</strong> Wireshark, Nmap, netstat, traceroute - Diagnostic et analyse de trafic.</li>
                         </ul>
                     </div>
 
-                    <div class="details-section">
-                        <h5>Aspects techniques & défis</h5>
-                        <p>Leaflet.js + tuiles OSM + OSRM routing. Défis : intégration marqueurs temps réel, tracés optimisés, zoom auto, compatibilité mobile.</p>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Captures d'écran</h5>
-                        <div class="gallery-grid">
-                            <img src="captures/leaflet-carte.png" alt="Carte Leaflet" class="clickable-img" data-full="captures/leaflet-carte-full.png" loading="lazy">
-                            <img src="captures/parcours-vtc.png" alt="Tracé parcours" class="clickable-img" data-full="captures/parcours-vtc-full.png" loading="lazy">
-                            <img src="captures/marqueurs-dynamiques.png" alt="Marqueurs temps réel" class="clickable-img" data-full="captures/marqueurs-dynamiques-full.png" loading="lazy">
-                        </div>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Compétences démontrées</h5>
-                        <div class="skills-badges">
-                            <span>Géolocalisation & cartographie web</span>
-                            <span>Leaflet / OpenStreetMap</span>
-                            <span>Intégration front-end + logique métier</span>
-                            <span>Optimisation coûts (alternative à Google API)</span>
-                        </div>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Preuves & Activités connexes</h5>
-                        <ul class="proof-list">
-                            <li>Optimisation itinéraires Linké → même logique de parcours</li>
-                            <li>Maraudes cyclistes → connaissance mobilité urbaine</li>
-                            <li>Coordination événements → gestion localisation & logistique</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Projet 3 - Gestion de projet multi-utilisateurs -->
-            <div class="project-item">
-                <div class="project-header clickable" data-toggle="project3">
-                    <h4>Application de gestion de projet (multi-utilisateurs + rôles + PostgreSQL)</h4>
-                    <p>Application complète avec authentification, gestion des rôles (admin/chef/membre), tâches, monitoring, collaboration, et prédiction intelligente de retards.</p>
-                    <div class="badges">
-                        <span class="badge">PostgreSQL</span><span class="badge">PHP</span><span class="badge">Multi-rôles</span>
-                    </div>
-                    <i class="fas fa-chevron-down arrow"></i>
-                </div>
-                <div class="project-details" id="project3">
-                    <div class="details-section">
-                        <h5>Objectifs</h5>
+                    <!-- Catégorie : Virtualisation & Conteneurisation -->
+                    <div class="skill-category">
+                        <h3><i class="fas fa-cube"></i> Virtualisation & Conteneurisation</h3>
                         <ul>
-                            <li>Suivi collaboratif de projets scolaires</li>
-                            <li>Gestion rôles clairs (admin, chef, membre)</li>
-                            <li>Estimation automatique & alertes retard</li>
-                            <li>Sécurité authentification & traçabilité</li>
+                            <li><strong>Hyperviseurs:</strong> VMware ESXi, VirtualBox, Proxmox (intermédiaire) - Déploiement et gestion de machines virtuelles.</li>
+                            <li><strong>Conteneurs:</strong> Docker (bases, Docker Compose) - Conteneurisation d'applications et orchestration simple.</li>
+                            <li><strong>Cloud:</strong> Bases AWS (EC2, S3), Azure (VMs, VNET) - Familiarité avec les services cloud fondamentaux.</li>
                         </ul>
                     </div>
 
-                    <div class="details-section">
-                        <h5>Aspects techniques & défis</h5>
-                        <p>PostgreSQL (schéma relationnel, rôles DB, triggers), PHP 8 (PDO, sessions bcrypt), Bootstrap responsive. Défis : concurrence modifications → verrouillage optimiste + historique logs.</p>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Captures d'écran</h5>
-                        <div class="gallery-grid">
-                            <img src="captures/gestion-dashboard.png" alt="Dashboard chef projet" class="clickable-img" data-full="captures/gestion-dashboard-full.png" loading="lazy">
-                            <img src="captures/gestion-taches.png" alt="Liste tâches multi-rôles" class="clickable-img" data-full="captures/gestion-taches-full.png" loading="lazy">
-                            <img src="captures/alerte-retard.png" alt="Alerte retard colorée" class="clickable-img" data-full="captures/alerte-retard-full.png" loading="lazy">
-                        </div>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Compétences démontrées</h5>
-                        <div class="skills-badges">
-                            <span>PostgreSQL (schéma & rôles)</span>
-                            <span>PHP sécurisé (PDO, bcrypt)</span>
-                            <span>Authentification multi-rôles</span>
-                            <span>Interface responsive</span>
-                            <span>Logique estimation & alertes</span>
-                        </div>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Preuves & Activités connexes</h5>
-                        <ul class="proof-list">
-                            <li>Coordination événements Linké → gestion planning & tâches multiples</li>
-                            <li>Accueil bénéficiaires Épicerie Rayon Capitole → traçabilité dons & bénéficiaires</li>
-                            <li>Sonorisateur paroissiale → anticipation besoins & coordination équipe technique</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Projet 4 - Système de connexion -->
-            <div class="project-item">
-                <div class="project-header clickable" data-toggle="project4">
-                    <h4>Système de connexion (admin / gestionnaire / utilisateur) + UI responsive</h4>
-                    <p>Création d’un système login complet avec pages séparées, design responsive, CSS/JS intégrés, et effets visuels.</p>
-                    <div class="badges">
-                        <span class="badge">PHP Sessions</span><span class="badge">Sécurité Web</span><span class="badge">Responsive UI</span>
-                    </div>
-                    <i class="fas fa-chevron-down arrow"></i>
-                </div>
-                <div class="project-details" id="project4">
-                    <div class="details-section">
-                        <h5>Objectifs</h5>
+                    <!-- Catégorie : Scripting & Automatisation -->
+                    <div class="skill-category">
+                        <h3><i class="fas fa-code"></i> Scripting & Automatisation</h3>
                         <ul>
-                            <li>Module authentification réutilisable</li>
-                            <li>Gestion rôles avec redirection intelligente</li>
-                            <li>Protection contre attaques courantes</li>
-                            <li>Interface responsive multi-appareils</li>
+                            <li><strong>Bash/Shell:</strong> Scripts d'administration système, monitoring, déploiement (avancé) - Automatisation des tâches répétitives.</li>
+                            <li><strong>Python:</strong> Automatisation de tâches, traitement de données, bases web (Flask) (intermédiaire) - Développement d'outils et de scripts complexes.</li>
+                            <li><strong>VBA:</strong> Automatisation Excel, création d'interfaces (intermédiaire) - Optimisation des processus bureautiques.</li>
+                            <li><strong>PowerShell:</strong> Administration Windows Server, Active Directory (bases) - Scripting pour environnements Microsoft.</li>
                         </ul>
                     </div>
 
-                    <div class="details-section">
-                        <h5>Aspects techniques & défis</h5>
-                        <p>PHP sessions + régénération ID, protection XSS/injection (htmlspecialchars, PDO), limite tentatives login. Défis : sécurisation brute-force → captcha + lockout.</p>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Captures d'écran</h5>
-                        <div class="gallery-grid">
-                            <img src="captures/login-page.png" alt="Page login" class="clickable-img" data-full="captures/login-page-full.png" loading="lazy">
-                            <img src="captures/dashboard-admin.png" alt="Dashboard admin" class="clickable-img" data-full="captures/dashboard-admin-full.png" loading="lazy">
-                            <img src="captures/redirection-role.png" alt="Redirection par rôle" class="clickable-img" data-full="captures/redirection-role-full.png" loading="lazy">
-                        </div>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Compétences démontrées</h5>
-                        <div class="skills-badges">
-                            <span>Auth sécurisée (sessions, validation)</span>
-                            <span>UI moderne (responsive + animation)</span>
-                            <span>Organisation propre des fichiers web</span>
-                            <span>UX / interface pro</span>
-                        </div>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Preuves & Activités connexes</h5>
-                        <ul class="proof-list">
-                            <li>Gestion accès flotte vélos Linké → contrôle rôles utilisateurs</li>
-                            <li>Accueil sécurisé bénéficiaires Rayon Capitole → confidentialité données</li>
-                            <li>Configuration sono paroissiale → gestion accès matériel & équipe</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Projet 5 - Éditeur de code Web -->
-            <div class="project-item">
-                <div class="project-header clickable" data-toggle="project5">
-                    <h4>Éditeur de code Web (style VS Code) pour projets</h4>
-                    <p>Interface web permettant d’afficher, modifier et sauvegarder les fichiers d’un projet (structure par identifiant + API PHP).</p>
-                    <div class="badges">
-                        <span class="badge">PHP API</span><span class="badge">IDE Web</span><span class="badge">Gestion Fichiers</span>
-                    </div>
-                    <i class="fas fa-chevron-down arrow"></i>
-                </div>
-                <div class="project-details" id="project5">
-                    <div class="details-section">
-                        <h5>Objectifs</h5>
+                    <!-- Catégorie : Bases de données -->
+                    <div class="skill-category">
+                        <h3><i class="fas fa-database"></i> Bases de données</h3>
                         <ul>
-                            <li>Simuler un IDE en ligne pour édition de code</li>
-                            <li>Gestion de structure de projets par ID</li>
-                            <li>Sauvegarde temps réel et navigation arborescente</li>
-                            <li>Interface intuitive comme VS Code</li>
+                            <li><strong>SQL:</strong> MySQL, PostgreSQL (requêtes complexes, administration de base) - Gestion et manipulation de données relationnelles.</li>
+                            <li><strong>Concepts:</strong> Modélisation de données (MCD/MLD), optimisation de requêtes - Conception de bases de données performantes.</li>
                         </ul>
                     </div>
 
-                    <div class="details-section">
-                        <h5>Aspects techniques & défis</h5>
-                        <p>API PHP (lecture/écriture fichiers, JSON response), front-end JS (CodeMirror pour éditeur, tree view). Défis : sécurité upload (validation, sandbox), perf sur gros fichiers.</p>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Captures d'écran</h5>
-                        <div class="gallery-grid">
-                            <img src="captures/editor-interface.png" alt="Interface éditeur" class="clickable-img" data-full="captures/editor-interface-full.png" loading="lazy">
-                            <img src="captures/tree-view.png" alt="Arborescence fichiers" class="clickable-img" data-full="captures/tree-view-full.png" loading="lazy">
-                            <img src="captures/save-api.png" alt="Sauvegarde via API" class="clickable-img" data-full="captures/save-api-full.png" loading="lazy">
-                        </div>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Compétences démontrées</h5>
-                        <div class="skills-badges">
-                            <span>Gestion de fichiers côté serveur</span>
-                            <span>API PHP (lecture/écriture)</span>
-                            <span>Interface type IDE (explorateur, éditeur)</span>
-                            <span>Structuration d’un projet web</span>
-                        </div>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Preuves & Activités connexes</h5>
-                        <ul class="proof-list">
-                            <li>Développement personnel → utilisation quotidienne pour scripts</li>
-                            <li>Contributions GitHub → édition collaborative</li>
-                            <li>Auto-formation → pratique front-end/back-end</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Projet 6 - Gestion de repas -->
-            <div class="project-item">
-                <div class="project-header clickable" data-toggle="project6">
-                    <h4>Application “Gestion de repas” (Excel VBA + IA + PDF + Email)</h4>
-                    <p>Application Excel intelligente qui génère des menus selon âge, santé, jours, budget, nombre de personnes + export PDF + envoi par email.</p>
-                    <div class="badges">
-                        <span class="badge">VBA</span><span class="badge">Excel</span><span class="badge">Automatisation</span>
-                    </div>
-                    <i class="fas fa-chevron-down arrow"></i>
-                </div>
-                <div class="project-details" id="project6">
-                    <div class="details-section">
-                        <h5>Objectifs</h5>
+                    <!-- Catégorie : Sécurité -->
+                    <div class="skill-category">
+                        <h3><i class="fas fa-shield-alt"></i> Sécurité</h3>
                         <ul>
-                            <li>Automatiser génération de menus personnalisés</li>
-                            <li>Intégrer logique IA simple (filtrage recettes)</li>
-                            <li>Export PDF et envoi email automatique</li>
-                            <li>Gestion budget et contraintes santé</li>
+                            <li><strong>Pentesting:</strong> Kali Linux, Metasploit, Nmap, Nessus (bases) - Évaluation des vulnérabilités et tests d'intrusion.</li>
+                            <li><strong>Concepts:</strong> Cryptographie, pare-feu, IDS/IPS, gestion des vulnérabilités - Compréhension des principes de sécurité.</li>
+                            <li><strong>Hardening:</strong> Systèmes Linux/Windows, réseaux - Renforcement de la sécurité des infrastructures.</li>
                         </ul>
                     </div>
 
-                    <div class="details-section">
-                        <h5>Aspects techniques & défis</h5>
-                        <p>VBA + UserForms, algorithme filtrage (tri recettes par critères), export PDF via Print to PDF, Outlook automation pour email. Défis : intégration IA basique (matching mots-clés), gestion erreurs budget.</p>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Captures d'écran</h5>
-                        <div class="gallery-grid">
-                            <img src="captures/vba-repas-form.png" alt="Formulaire repas VBA" class="clickable-img" data-full="captures/vba-repas-form-full.png" loading="lazy">
-                            <img src="captures/menu-genere.png" alt="Menu généré" class="clickable-img" data-full="captures/menu-genere-full.png" loading="lazy">
-                            <img src="captures/email-export.png" alt="Envoi email PDF" class="clickable-img" data-full="captures/email-export-full.png" loading="lazy">
-                        </div>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Compétences démontrées</h5>
-                        <div class="skills-badges">
-                            <span>VBA avancé (automatisation)</span>
-                            <span>Logique de filtrage + tri + données</span>
-                            <span>Génération PDF</span>
-                            <span>Envoi mail automatique (workflow complet)</span>
-                        </div>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Preuves & Activités connexes</h5>
-                        <ul class="proof-list">
-                            <li>Organisation événements Linké → gestion listes participants & stats</li>
-                            <li>Épicerie Rayon Capitole → suivi dons & bénéficiaires (similaire à saisie)</li>
-                            <li>Sonorisateur → planification matériel & équipe → organisation</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Projet 7 - UserForm dynamique Famille -->
-            <div class="project-item">
-                <div class="project-header clickable" data-toggle="project7">
-                    <h4>UserForm dynamique “Famille” (VBA)</h4>
-                    <p>UserForm où les champs se créent automatiquement pour plusieurs personnes (âge, sexe, morphologie, ville, pays).</p>
-                    <div class="badges">
-                        <span class="badge">VBA UI</span><span class="badge">UserForm</span><span class="badge">Dynamique</span>
-                    </div>
-                    <i class="fas fa-chevron-down arrow"></i>
-                </div>
-                <div class="project-details" id="project7">
-                    <div class="details-section">
-                        <h5>Objectifs</h5>
+                    <!-- Catégorie : Outils de développement & Versioning -->
+                    <div class="skill-category">
+                        <h3><i class="fas fa-tools"></i> Outils & Versioning</h3>
                         <ul>
-                            <li>Interface dynamique pour multi-profils</li>
-                            <li>Ajout/suppression champs en temps réel</li>
-                            <li>Validation et stockage données</li>
-                            <li>UX intuitive pour saisie familiale</li>
+                            <li><strong>Git:</strong> GitHub, GitLab (gestion de versions, collaboration) - Maîtrise des workflows de développement collaboratif.</li>
+                            <li><strong>IDE/Éditeurs:</strong> VS Code, Sublime Text, Vim - Environnements de développement et d'édition de code.</li>
+                            <li><strong>Bureautique:</strong> Suite Microsoft Office (Excel, Word, PowerPoint, Visio) - Outils de productivité essentiels.</li>
                         </ul>
                     </div>
 
-                    <div class="details-section">
-                        <h5>Aspects techniques & défis</h5>
-                        <p>VBA + Controls dynamiques (Loop CreateObject), gestion événements, validation regex. Défis : redimensionnement frame, persistance données en array.</p>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Captures d'écran</h5>
-                        <div class="gallery-grid">
-                            <img src="captures/userform-famille.png" alt="UserForm dynamique" class="clickable-img" data-full="captures/userform-famille-full.png" loading="lazy">
-                            <img src="captures/champs-ajout.png" alt="Ajout champs auto" class="clickable-img" data-full="captures/champs-ajout-full.png" loading="lazy">
-                            <img src="captures/validation-form.png" alt="Validation données" class="clickable-img" data-full="captures/validation-form-full.png" loading="lazy">
-                        </div>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Compétences démontrées</h5>
-                        <div class="skills-badges">
-                            <span>VBA UI dynamique (Frame + Controls)</span>
-                            <span>Gestion de données multi-profils</span>
-                            <span>Logique d’interface utilisateur</span>
-                            <span>Validation de formulaire</span>
-                        </div>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Preuves & Activités connexes</h5>
-                        <ul class="proof-list">
-                            <li>Gestion multi-profils Linké → adaptation à groupes variés</li>
-                            <li>Accueil Épicerie → saisie données diverses</li>
-                            <li>Coordination équipe sono → personnalisation besoins</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Projet 8 - Système scolaire VBA -->
-            <div class="project-item">
-                <div class="project-header clickable" data-toggle="project8">
-                    <h4>Système scolaire VBA (sans UserForm) : étudiants + matières + PV + bulletin</h4>
-                    <p>Application Excel pour enregistrer étudiants/matières par classe et générer automatiquement bulletins et procès-verbaux (avec signature/cachet).</p>
-                    <div class="badges">
-                        <span class="badge">VBA</span><span class="badge">Excel</span><span class="badge">Automatisation Scolaire</span>
-                    </div>
-                    <i class="fas fa-chevron-down arrow"></i>
-                </div>
-                <div class="project-details" id="project8">
-                    <div class="details-section">
-                        <h5>Objectifs</h5>
+                    <!-- Catégorie : Soft Skills (Compétences transversales) -->
+                    <div class="skill-category">
+                        <h3><i class="fas fa-user-tie"></i> Soft Skills</h3>
                         <ul>
-                            <li>Automatiser saisie & calcul notes</li>
-                            <li>Générer bulletins/PV officiels</li>
-                            <li>Ajout signature/cachet PDF</li>
-                            <li>Export lots rapide</li>
-                        </ul>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Aspects techniques & défis</h5>
-                        <p>VBA + calculs avancés (moyennes, classements), export PDF, insertion images. Défis : formatage conditionnel, signature dynamique, gestion erreurs saisie.</p>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Captures d'écran</h5>
-                        <div class="gallery-grid">
-                            <img src="captures/vba-scolaire-saisie.png" alt="Saisie étudiants/matières" class="clickable-img" data-full="captures/vba-scolaire-saisie-full.png" loading="lazy">
-                            <img src="captures/bulletin-genere.png" alt="Bulletin PDF généré" class="clickable-img" data-full="captures/bulletin-genere-full.png" loading="lazy">
-                            <img src="captures/pv-classe.png" alt="PV de classe" class="clickable-img" data-full="captures/pv-classe-full.png" loading="lazy">
-                        </div>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Compétences démontrées</h5>
-                        <div class="skills-badges">
-                            <span>Automatisation Excel complète</span>
-                            <span>Génération de documents structurés</span>
-                            <span>Gestion de classes / matières / calculs</span>
-                            <span>Insertion d’images (signature, cachet)</span>
-                        </div>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Preuves & Activités connexes</h5>
-                        <ul class="proof-list">
-                            <li>Organisation Linké → gestion listes et stats</li>
-                            <li>Épicerie Rayon Capitole → suivi dons et bénéficiaires</li>
-                            <li>Sono paroissiale → planification et documentation</li>
+                            <li>Résolution de problèmes complexes - Capacité à analyser et à trouver des solutions innovantes.</li>
+                            <li>Communication technique et pédagogique - Aptitude à expliquer des concepts techniques complexes.</li>
+                            <li>Travail en équipe et collaboration - Efficacité dans les projets collectifs.</li>
+                            <li>Autonomie et proactivité - Prise d'initiative et gestion indépendante des tâches.</li>
+                            <li>Adaptabilité et veille technologique - Capacité à s'adapter aux nouvelles technologies et à se former continuellement.</li>
+                            <li>Sens de l'organisation et rigueur - Gestion efficace des projets et attention aux détails.</li>
                         </ul>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Projet 9 - Interface admin fournisseurs -->
-            <div class="project-item">
-                <div class="project-header clickable" data-toggle="project9">
-                    <h4>Interface admin fournisseurs (PHP + MySQL) + catégories + commande</h4>
-                    <p>Module web d’administration pour fournisseurs : ajout, gestion de produits par catégories, affichage et commande.</p>
-                    <div class="badges">
-                        <span class="badge">PHP</span><span class="badge">MySQL</span><span class="badge">CRUD</span>
-                    </div>
-                    <i class="fas fa-chevron-down arrow"></i>
-                </div>
-                <div class="project-details" id="project9">
-                    <div class="details-section">
-                        <h5>Objectifs</h5>
-                        <ul>
-                            <li>Gestion complète produits & fournisseurs</li>
-                            <li>Suivi commandes & statuts</li>
-                            <li>Tableau de bord stats (CA, stock faible)</li>
-                            <li>Facturation PDF</li>
-                        </ul>
-                    </div>
+        <!-- Section Parcours & Expériences - Chronologie des étapes clés du parcours -->
+        <section id="experiences" class="section fade-in" aria-labelledby="experiences-heading">
+            <div class="container">
+                <h2 id="experiences-heading">Mon Parcours & Expériences</h2>
+                <p class="intro-section">Un aperçu chronologique de mes formations et expériences professionnelles, mettant en lumière mon développement et mes acquis. Chaque étape a contribué à forger mon profil technique et mes compétences transversales.</p>
 
-                    <div class="details-section">
-                        <h5>Aspects techniques & défis</h5>
-                        <p>PHP + MySQL (~18 tables, jointures, index). Défis : CRUD sécurisé → PDO + validation, stats temps réel → requêtes optimisées.</p>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Captures d'écran</h5>
-                        <div class="gallery-grid">
-                            <img src="captures/backoffice-produits.png" alt="Gestion produits" class="clickable-img" data-full="captures/backoffice-produits-full.png" loading="lazy">
-                            <img src="captures/commandes-stats.png" alt="Stats commandes" class="clickable-img" data-full="captures/commandes-stats-full.png" loading="lazy">
-                            <img src="captures/facture-pdf.png" alt="Facture PDF" class="clickable-img" data-full="captures/facture-pdf-full.png" loading="lazy">
+                <div class="timeline">
+                    <!-- Item 1: Bachelor 2 Réseaux et Systèmes Informatiques -->
+                    <div class="timeline-item">
+                        <div class="timeline-icon" aria-hidden="true"><i class="fas fa-graduation-cap"></i></div>
+                        <div class="timeline-content">
+                            <h3>Bachelor 2 Réseaux et Systèmes Informatiques</h3>
+                            <span class="timeline-date">2024 – 2026 (en cours) | [Nom de l’établissement]</span>
+                            <p>Formation professionnalisante axée sur l’administration réseaux et systèmes, la cybersécurité de base, la virtualisation et les fondamentaux du cloud. Ce cursus m'a permis d'acquérir une base solide et des compétences pratiques indispensables.</p>
+                            <h4>Principaux modules suivis :</h4>
+                            <ul>
+                                <li>Administration Linux avancée (gestion services, utilisateurs, SELinux, firewalling) - Maîtrise des environnements serveurs Linux.</li>
+                                <li>Réseaux : TCP/IP approfondi, commutation, routage, VLAN, NAT, DHCP, DNS - Conception et gestion d'infrastructures réseau complexes.</li>
+                                <li>Sécurité : principes cryptographiques, pare-feu stateful, détection d’intrusions - Protection des systèmes et des données.</li>
+                                <li>Bases de données : PostgreSQL et MySQL (modélisation, requêtes complexes, administration) - Gestion et optimisation des systèmes de bases de données.</li>
+                                <li>Virtualisation & conteneurs : VMware, VirtualBox, Docker basics - Déploiement et gestion d'environnements virtualisés.</li>
+                            </ul>
+                            <p class="timeline-note">Moyenne actuelle : 14,8/20 – Mention Bien espérée en fin de Bachelor 2. Cette performance académique reflète mon engagement et ma compréhension des concepts clés.</p>
                         </div>
                     </div>
 
-                    <div class="details-section">
-                        <h5>Compétences démontrées</h5>
-                        <div class="skills-badges">
-                            <span>CRUD PHP/MySQL</span>
-                            <span>Gestion catégories + produits</span>
-                            <span>Développement back-office</span>
-                            <span>Sécurité (validation, structure DB)</span>
+                    <!-- Item 2: Stage – Assistant Support & Réseaux -->
+                    <div class="timeline-item">
+                        <div class="timeline-icon" aria-hidden="true"><i class="fas fa-briefcase"></i></div>
+                        <div class="timeline-content">
+                            <h3>Stage – Assistant Support & Réseaux</h3>
+                            <span class="timeline-date">Juillet–Août 2025 | [Nom entreprise ou "Stage académique"]</span>
+                            <p>Expérience pratique en support technique et administration réseau, où j'ai pu appliquer mes connaissances théoriques à des situations réelles et contribuer activement à l'amélioration des services IT.</p>
+                            <h4>Missions réalisées :</h4>
+                            <ul>
+                                <li>Support niveau 1/2 : résolution ~65 tickets utilisateurs (Windows, bureautique, imprimantes réseau) - Amélioration de la satisfaction utilisateur et réduction des temps d'arrêt.</li>
+                                <li>Configuration et extension réseau Wi-Fi (ajout points d’accès, optimisation couverture) - Optimisation de la connectivité et de la performance réseau.</li>
+                                <li>Participation à la migration d’un serveur DHCP vers une nouvelle plage IP - Contribution à la modernisation de l'infrastructure réseau.</li>
+                                <li>Documentation de procédures internes (création de 12 fiches techniques) - Amélioration de la base de connaissances et facilitation de la transmission du savoir.</li>
+                                <li>Premiers pas sur Active Directory : création utilisateurs/groupes, délégation droits - Initiation à la gestion des identités et accès.</li>
+                            </ul>
+                            <p class="timeline-note">Résultats mesurables : réduction de 22 % du temps moyen de résolution des tickets Wi-Fi grâce à une meilleure cartographie et configuration des canaux. Ce résultat démontre mon impact direct sur l'efficacité opérationnelle.</p>
                         </div>
                     </div>
 
-                    <div class="details-section">
-                        <h5>Preuves & Activités connexes</h5>
-                        <ul class="proof-list">
-                            <li>Gestion dons Épicerie Rayon Capitole → suivi stocks & bénéficiaires</li>
-                            <li>Coordination flotte Linké → gestion matériel & stats utilisation</li>
-                            <li>Sono paroissiale → gestion stock matériel technique</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Projet 10 - Portfolio -->
-            <div class="project-item">
-                <div class="project-header clickable" data-toggle="project10">
-                    <h4>Portfolio technicien Réseaux & Systèmes (HTML/CSS/JS)</h4>
-                    <p>Création d’un portfolio web responsive pour présenter tes projets orientés réseaux/systèmes et ton profil professionnel.</p>
-                    <div class="badges">
-                        <span class="badge">HTML/CSS/JS</span><span class="badge">Responsive</span><span class="badge">Portfolio</span>
-                    </div>
-                    <i class="fas fa-chevron-down arrow"></i>
-                </div>
-                <div class="project-details" id="project10">
-                    <div class="details-section">
-                        <h5>Objectifs</h5>
-                        <ul>
-                            <li>Présenter projets et compétences de manière professionnelle</li>
-                            <li>Design responsive et animations fluides</li>
-                            <li>Intégration liens CV, GitHub, LinkedIn</li>
-                            <li>Préparation à l’alternance/stage</li>
-                        </ul>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Aspects techniques & défis</h5>
-                        <p>HTML5, CSS3 (flex/grid, animations), JS vanilla (toggle thème, accordéon projets, counters). Défis : optimisation mobile, accessibilité (ARIA), SEO basique.</p>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Captures d'écran</h5>
-                        <div class="gallery-grid">
-                            <img src="captures/portfolio-hero.png" alt="Hero portfolio" class="clickable-img" data-full="captures/portfolio-hero-full.png" loading="lazy">
-                            <img src="captures/projets-accordion.png" alt="Section projets" class="clickable-img" data-full="captures/projets-accordion-full.png" loading="lazy">
-                            <img src="captures/contact-form.png" alt="Formulaire contact" class="clickable-img" data-full="captures/contact-form-full.png" loading="lazy">
+                    <!-- Item 3: Projets personnels & auto-formation continue -->
+                    <div class="timeline-item">
+                        <div class="timeline-icon" aria-hidden="true"><i class="fas fa-laptop-code"></i></div>
+                        <div class="timeline-content">
+                            <h3>Projets personnels & auto-formation continue</h3>
+                            <span class="timeline-date">2023 – aujourd’hui</span>
+                            <p>Engagement constant dans des projets personnels et une démarche d'auto-formation pour explorer de nouvelles technologies et approfondir mes compétences au-delà du cadre académique.</p>
+                            <h4>Activités régulières :</h4>
+                            <ul>
+                                <li>Mise en place de laboratoires virtuels (GNS3, VirtualBox, Proxmox) pour tester configurations réseaux - Expérimentation et validation de concepts réseau.</li>
+                                <li>Participation à 4 CTF / challenges sécurité (TryHackMe, HackTheBox Academy) - Développement de compétences en cybersécurité offensive et défensive.</li>
+                                <li>Développement et publication de scripts d’automatisation (GitHub) - Contribution à la communauté open-source et démonstration de compétences en scripting.</li>
+                                <li>Suivi de formations en ligne : Cisco CCNA modules, Linux Essentials, Google Cybersecurity, bases AWS - Acquisition de certifications et de connaissances spécialisées.</li>
+                            </ul>
                         </div>
                     </div>
 
-                    <div class="details-section">
-                        <h5>Compétences démontrées</h5>
-                        <div class="skills-badges">
-                            <span>Présentation professionnelle (branding)</span>
-                            <span>HTML/CSS/JS propre</span>
-                            <span>Mise en valeur des compétences techniques</span>
-                            <span>Préparation à l’alternance/stage</span>
+                    <!-- Nouvelle entrée : Certifications -->
+                    <div class="timeline-item">
+                        <div class="timeline-icon" aria-hidden="true"><i class="fas fa-certificate"></i></div>
+                        <div class="timeline-content">
+                            <h3>Certifications & Badges</h3>
+                            <span class="timeline-date">2023 – aujourd’hui</span>
+                            <p>Les certifications obtenues et en cours attestent de ma maîtrise des concepts et outils essentiels dans le domaine des réseaux et systèmes informatiques.</p>
+                            <ul>
+                                <li><strong>Cisco Networking Academy:</strong> Introduction to Networks (ITN), Switching, Routing, and Wireless Essentials (SRWE) - Fondations solides en réseau.</li>
+                                <li><strong>Google:</strong> Google IT Support Professional Certificate (en cours) - Compétences en support IT et résolution de problèmes.</li>
+                                <li><strong>Linux Foundation:</strong> Linux Essentials (badge obtenu) - Maîtrise des bases de l'environnement Linux.</li>
+                                <li><strong>TryHackMe:</strong> Jr. Penetration Tester Pathway (en cours) - Développement de compétences en tests d'intrusion.</li>
+                            </ul>
+                            <p class="timeline-note">Ces certifications attestent de mes compétences pratiques et théoriques dans des domaines clés de l'IT, renforçant ma crédibilité professionnelle.</p>
                         </div>
                     </div>
 
-                    <div class="details-section">
-                        <h5>Preuves & Activités connexes</h5>
-                        <ul class="proof-list">
-                            <li>Communication événements Linké → création supports</li>
-                            <li>Accueil public Épicerie → communication claire</li>
-                            <li>Coordination sono → gestion planning & communication</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Projet Bonus 11 - Audit de sécurité Windows Server avec Kali -->
-            <div class="project-item">
-                <div class="project-header clickable" data-toggle="project11">
-                    <h4>Audit de sécurité sur Windows Server avec Kali</h4>
-                    <p>Audit complet de vulnérabilités sur un serveur Windows (Active Directory, ports ouverts), utilisation de Kali pour scans (Nmap, Metasploit, Nessus-like), rapport avec recommandations.</p>
-                    <div class="badges">
-                        <span class="badge">Kali Linux</span><span class="badge">Windows Server</span><span class="badge">Sécurité</span><span class="badge">Audit</span>
-                    </div>
-                    <i class="fas fa-chevron-down arrow"></i>
-                </div>
-                <div class="project-details" id="project11">
-                    <div class="details-section">
-                        <h5>Objectifs</h5>
-                        <ul>
-                            <li>Identifier vulnérabilités sur serveur Windows</li>
-                            <li>Utiliser outils Kali pour scans et exploits</li>
-                            <li>Rédiger rapport détaillé avec priorités</li>
-                            <li>Appliquer hardening post-audit</li>
-                        </ul>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Aspects techniques & défis</h5>
-                        <p>Nmap (port scan, vuln scripts), Metasploit (exploits EternalBlue), Wireshark (trafic analyse), hardening (GPO, firewall Windows). Défis : faux positifs, simulation sans dommage, documentation exhaustive.</p>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Captures d'écran</h5>
-                        <div class="gallery-grid">
-                            <img src="captures/nmap-scan.png" alt="Scan Nmap Kali" class="clickable-img" data-full="captures/nmap-scan-full.png" loading="lazy">
-                            <img src="captures/metasploit-exploit.png" alt="Metasploit sur Windows" class="clickable-img" data-full="captures/metasploit-exploit-full.png" loading="lazy">
-                            <img src="captures/rapport-securite.png" alt="Rapport audit" class="clickable-img" data-full="captures/rapport-securite-full.png" loading="lazy">
+                    <!-- Nouvelle entrée : Veille Technologique -->
+                    <div class="timeline-item">
+                        <div class="timeline-icon" aria-hidden="true"><i class="fas fa-lightbulb"></i></div>
+                        <div class="timeline-content">
+                            <h3>Veille Technologique Active</h3>
+                            <span class="timeline-date">En continu</span>
+                            <p>Je maintiens une veille technologique constante pour rester informé des dernières avancées en matière de réseaux, cybersécurité, cloud et automatisation. Cette démarche proactive est essentielle pour anticiper les évolutions et adapter mes compétences aux besoins du marché.</p>
+                            <h4>Thèmes de veille actuels :</h4>
+                            <ul>
+                                <li>Sécurité des infrastructures cloud (AWS, Azure, GCP) - Comprendre les enjeux de sécurité dans le cloud.</li>
+                                <li>DevOps et Infrastructure as Code (Terraform, Ansible) - Optimiser les processus de déploiement et de gestion d'infrastructure.</li>
+                                <li>Réseaux définis par logiciel (SDN) et virtualisation des fonctions réseau (NFV) - Explorer les architectures réseau de nouvelle génération.</li>
+                                <li>Menaces persistantes avancées (APT) et techniques de défense - Se tenir informé des dernières menaces et contre-mesures.</li>
+                            </ul>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
 
-                    <div class="details-section">
-                        <h5>Compétences démontrées</h5>
-                        <div class="skills-badges">
-                            <span>Audit vulnérabilités (Nmap, Metasploit)</span>
-                            <span>Kali Linux pour pentest</span>
-                            <span>Hardening Windows Server (GPO, firewall)</span>
-                            <span>Rédaction rapports sécurité</span>
-                            <span>Analyse trafic (Wireshark)</span>
+        <!-- Section Projets - Présentation des réalisations techniques -->
+        <section id="projects" class="section fade-in" aria-labelledby="projects-heading">
+            <div class="container">
+                <h2 id="projects-heading">Mes Projets Techniques</h2>
+                <p class="intro-projects">
+                    Chaque projet est une opportunité d'appliquer et d'approfondir mes connaissances. Cliquez sur chaque carte pour découvrir les objectifs, le contexte, les aspects techniques, les compétences et mes engagements associés. Cette section démontre ma capacité à transformer des concepts en solutions concrètes et fonctionnelles.
+                </p>
+
+                <div class="projects-accordion">
+
+                    <!-- Projet 1 - VPN Site-to-Site -->
+                    <div class="project-item">
+                        <div class="project-header clickable" data-toggle="project1" role="button" aria-expanded="false" aria-controls="project1-details">
+                            <h4>VPN Site-to-Site (pfSense + Windows Server sous VMware)</h4>
+                            <p>Mise en place d'un VPN entre deux sites virtuels, avec 2 pfSense + 2 Windows Server, routage, IP plan, tests de connectivité (ping), et configuration réseau VMware.</p>
+                            <div class="badges">
+                                <span class="badge">VPN IPsec</span><span class="badge">pfSense</span><span class="badge">VMware</span><span class="badge">Routage</span><span class="badge">Cybersécurité</span>
+                            </div>
+                            <i class="fas fa-chevron-down arrow"></i>
                         </div>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Preuves & Activités connexes</h5>
-                        <ul class="proof-list">
-                            <li>Challenges TryHackMe / HackTheBox → pratique pentest</li>
-                            <li>Formation Google Cybersecurity → bases audit</li>
-                            <li>Projets personnels → application immédiate</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Projet Bonus 12 - Scripting Shell et Bash -->
-            <div class="project-item">
-                <div class="project-header clickable" data-toggle="project12">
-                    <h4>Scripting Shell et Bash (Automatisation Systèmes)</h4>
-                    <p>Suites de scripts Bash/Shell pour automatisation : backup serveur, monitoring logs, déploiement services Linux, inventory AD, et hardening auto.</p>
-                    <div class="badges">
-                        <span class="badge">Bash</span><span class="badge">Shell Scripting</span><span class="badge">Automatisation</span><span class="badge">Linux</span>
-                    </div>
-                    <i class="fas fa-chevron-down arrow"></i>
-                </div>
-                <div class="project-details" id="project12">
-                    <div class="details-section">
-                        <h5>Objectifs</h5>
-                        <ul>
-                            <li>Automatiser tâches répétitives en admin sys</li>
-                            <li>Créer scripts réutilisables et paramétrables</li>
-                            <li>Intégrer monitoring et alertes</li>
-                            <li>Optimiser workflows Linux/Windows</li>
-                        </ul>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Aspects techniques & défis</h5>
-                        <p>Bash (loops, conditions, cron jobs), awk/sed pour parsing logs, rsync pour backup, PowerShell hybrid. Défis : gestion erreurs cross-OS, sécurité scripts (non-root), logging détaillé.</p>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Captures d'écran</h5>
-                        <div class="gallery-grid">
-                            <img src="captures/bash-backup-script.png" alt="Script backup Bash" class="clickable-img" data-full="captures/bash-backup-script-full.png" loading="lazy">
-                            <img src="captures/monitoring-logs.png" alt="Monitoring logs" class="clickable-img" data-full="captures/monitoring-logs-full.png" loading="lazy">
-                            <img src="captures/script-deploy.png" alt="Déploiement services" class="clickable-img" data-full="captures/script-deploy-full.png" loading="lazy">
-                        </div>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Compétences démontrées</h5>
-                        <div class="skills-badges">
-                            <span>Scripting Bash/Shell avancé</span>
-                            <span>Automatisation backup/monitoring</span>
-                            <span>Gestion erreurs et logging</span>
-                            <span>Hybrid PowerShell/Bash</span>
-                            <span>Cron jobs et scheduling</span>
-                        </div>
-                    </div>
-
-                    <div class="details-section">
-                        <h5>Preuves & Activités connexes</h5>
-                        <ul class="proof-list">
-                            <li>Labos virtuels Proxmox → scripts pour setup</li>
-                            <li>Contributions GitHub → partage scripts open-source</li>
-                            <li>Auto-formation Linux Essentials → pratique quotidienne</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- Lightbox pour agrandir les screenshots -->
-<div id="lightbox" class="lightbox">
-    <button class="lightbox-close">×</button>
-    <img id="lightbox-img" src="" alt="Screenshot agrandi">
-</div>
-
-<!-- ======================================================================
-     SECTION ACTIVITÉS & ENGAGEMENTS ASSOCIATIFS
-     ====================================================================== -->
-<section id="engagements" class="section fade-in">
-    <div class="container">
-        <h2>Mes Engagements & Activités Associatives</h2>
-        <p class="intro-section">
-            Au-delà de mes projets techniques, je m’implique activement dans la vie associative et bénévole depuis plusieurs années. 
-            Ces expériences m’ont permis de développer des compétences transversales essentielles : travail en équipe, gestion de projet, 
-            communication, adaptabilité, sens du service et organisation d’événements. Elles prouvent aussi ma capacité à concilier 
-            études exigeantes et engagement citoyen.
-        </p>
-
-        <div class="engagements-grid">
-
-            <!-- Activité 1 : Linké -->
-            <div class="engagement-card">
-                <div class="engagement-photo" data-full="photos/linke-evenement.jpg">
-                    <img src="photos/linke-evenement-thumb.jpg" alt="Événement mobilité Linké" loading="lazy">
-                    <div class="photo-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
-                <div class="engagement-content">
-                    <h3>Bénévole – Association Linké (Mobilité étudiante)</h3>
-                    <span class="periode">2023 – 2025</span>
-                    <p>
-                        Coordination logistique et animation d’événements de promotion des mobilités douces sur le campus. 
-                        Gestion d’une flotte de vélos partagés, organisation de stands, ateliers réparation et challenges mobilité.
-                    </p>
-                    <p class="soft-skills">
-                        Compétences développées : animation de groupe, gestion logistique, communication grand public, 
-                        organisation d’événements (jusqu’à 150 participants).
-                    </p>
-                    <div class="badges-soft">
-                        <span>Animation</span><span>Logistique</span><span>Communication</span><span>Mobilité durable</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Activité 2 : Épicerie solidaire – Asso Rayon Capitole -->
-            <div class="engagement-card">
-                <div class="engagement-photo" data-full="photos/epicerie-rayon.jpg">
-                    <img src="photos/epicerie-rayon-thumb.jpg" alt="Épicerie solidaire Rayon Capitole" loading="lazy">
-                    <div class="photo-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
-                <div class="engagement-content">
-                    <h3>Bénévole – Épicerie solidaire Asso Rayon Capitole<br>(Université Toulouse Capitole)</h3>
-                    <span class="periode">2024 – présent</span>
-                    <p>
-                        Participation active à la gestion de l’épicerie solidaire étudiante : réception des dons, tri, mise en rayon, 
-                        accueil des bénéficiaires, tenue de caisse, sensibilisation à la précarité alimentaire.
-                    </p>
-                    <p class="soft-skills">
-                        Compétences développées : écoute active, gestion du stress, travail en équipe pluridisciplinaire, 
-                        solidarité et inclusion sociale.
-                    </p>
-                    <div class="badges-soft">
-                        <span>Solidarité</span><span>Accueil public</span><span>Organisation</span><span>Écoute</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Activité 3 : Sonorisateur paroissial -->
-            <div class="engagement-card">
-                <div class="engagement-photo" data-full="photos/sono-dorade.jpg">
-                    <img src="photos/sono-dorade-thumb.jpg" alt="Installation sono Notre-Dame de la Dorade" loading="lazy">
-                    <div class="photo-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
-                <div class="engagement-content">
-                    <h3>Monteur son & micros – Paroisse étudiante Notre-Dame de la Dorade</h3>
-                    <span class="periode">2023 – présent</span>
-                    <p>
-                        Responsable technique bénévole pour les messes, concerts, conférences et célébrations : 
-                        installation micros HF, tables de mixage analogiques/numériques, enceintes, retour scène, 
-                        gestion feedback et équilibrage sonore en live (jusqu’à 400 personnes).
-                    </p>
-                    <p class="soft-skills">
-                        Compétences développées : technique son, réactivité en situation réelle, anticipation pannes, 
-                        travail sous pression, sens du service et discrétion.
-                    </p>
-                    <div class="badges-soft">
-                        <span>Son & technique</span><span>Réactivité</span><span>Gestion live</span><span>Service</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Activité 4 : Cycliste bénévole -->
-            <div class="engagement-card">
-                <div class="engagement-photo" data-full="photos/velo-linke.jpg">
-                    <img src="photos/velo-linke-thumb.jpg" alt="Distribution Linké à vélo" loading="lazy">
-                    <div class="photo-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
-                <div class="engagement-content">
-                    <h3>Cycliste bénévole – Linké & autres collectifs</h3>
-                    <span class="periode">2024 – présent</span>
-                    <p>
-                        Participation à des maraudes solidaires, distributions alimentaires et événements éco-citoyens à vélo. 
-                        Entretien et petit réglage mécanique des vélos collectifs.
-                    </p>
-                    <p class="soft-skills">
-                        Engagement écologique, endurance physique, sens de l’initiative, adaptabilité terrain.
-                    </p>
-                    <div class="badges-soft">
-                        <span>Mobilité douce</span><span>Solidarité</span><span>Mécanique vélo</span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="engagements-conclusion">
-            <p>
-                Ces engagements m’ont appris à travailler avec des publics très variés, à gérer des imprévus, à coordonner des équipes 
-                et à m’investir durablement dans des projets collectifs – des qualités que je mets aussi au service de mes projets techniques.
-            </p>
-        </div>
-    </div>
-</section>
-
-<!-- Lightbox réutilisable pour agrandir les photos des activités -->
-<div id="lightbox" class="lightbox" aria-hidden="true">
-    <button class="lightbox-close" aria-label="Fermer">×</button>
-    <img id="lightbox-img" src="" alt="Photo agrandie">
-    <div id="lightbox-caption"></div>
-</div>
-
-    <!-- ==================== SECTION CONTACT – VERSION FONCTIONNELLE ==================== -->
-<section id="contact" class="section fade-in">
-    <div class="container">
-        <h2>Me contacter – Alternance / Stage / Collaboration</h2>
-
-        <p class="lead">
-            Je recherche activement une <strong>alternance longue durée (1 à 2 ans)</strong> ou un stage significatif à partir de 
-            <strong>septembre 2026</strong> ou <strong>janvier 2027</strong>.<br>
-            N’hésitez pas à m’écrire directement via le formulaire ci-dessous — votre message arrivera instantanément dans ma boîte mail.
-        </p>
-
-        <div class="contact-layout">
-            <!-- Colonne infos rapides -->
-            <div class="contact-info-column">
-                <div class="contact-method">
-                    <i class="fas fa-envelope"></i>
-                    <div>
-                        <h4>Email principal</h4>
-                        <p><a href="mailto:brindelndengue8@gmail.com">brindelndengue8@gmail.com</a></p>
-                        <small>Réponse habituelle sous 24–48 h</small>
-                    </div>
-                </div>
-
-                <div class="contact-method">
-                    <i class="fab fa-linkedin"></i>
-                    <div>
-                        <h4>LinkedIn (recommandé pour les recruteurs)</h4>
-                        <p><a href="https://www.linkedin.com/in/brindel-ndengue-788574335/" target="_blank" rel="noopener">linkedin.com/in/brindel-ndengue-788574335</a></p>
-                        <small>Profil à jour – ouvert aux messages InMail</small>
-                    </div>
-                </div>
-
-                <div class="contact-method">
-                    <i class="fab fa-github"></i>
-                    <div>
-                        <h4>GitHub</h4>
-                        <p><a href="https://github.com/BrindelNDENGUE8" target="_blank" rel="noopener">github.com/BrindelNDENGUE8</a></p>
-                        <small>Scripts, labs réseaux, projets perso</small>
-                    </div>
-                </div>
-
-                <div class="contact-availability">
-                    <h4>Disponibilités</h4>
-                    <ul>
-                        <li>Alternance : dès septembre 2026 ou janvier 2027</li>
-                        <li>Rythme idéal : 3 jours entreprise / 2 jours école (ou inversé)</li>
-                        <li>Mobilité : Île-de-France principalement – remote partiel envisageable</li>
-                        <li>Durée souhaitée : 12 à 24 mois</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Colonne formulaire -->
-            <div class="contact-form-column">
-                <div class="form-wrapper">
-                    <h3>Envoyer un message</h3>
-
-                    <form id="realContactForm" 
-                          action="https://formspree.io/f/VOTRE_CODE_FORMSPREE_ICI" 
-                          method="POST"
-                          class="contact-form">
-
-                        <!-- Champs obligatoires -->
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="sender-name">Votre nom / prénom <span class="required">*</span></label>
-                                <input type="text" 
-                                       id="sender-name" 
-                                       name="Nom" 
-                                       placeholder="Ex : Marie Dupont" 
-                                       required 
-                                       minlength="2"
-                                       aria-required="true">
+                        <div class="project-details" id="project1-details" aria-hidden="true">
+                            <div class="details-section">
+                                <h5>Objectifs du projet</h5>
+                                <ul>
+                                    <li>Connecter deux sites virtuels de manière sécurisée via un tunnel VPN IPsec.</li>
+                                    <li>Configurer et optimiser les règles de routage pour assurer la communication inter-sites.</li>
+                                    <li>Mettre en œuvre des politiques de sécurité robustes sur les firewalls pfSense.</li>
+                                    <li>Valider la connectivité et la résilience du VPN par des tests approfondis.</li>
+                                </ul>
                             </div>
 
-                            <div class="form-group">
-                                <label for="sender-email">Votre email <span class="required">*</span></label>
-                                <input type="email" 
-                                       id="sender-email" 
-                                       name="Email" 
-                                       placeholder="exemple@entreprise.com" 
-                                       required 
-                                       aria-required="true">
+                            <div class="details-section">
+                                <h5>Contexte & Enjeux</h5>
+                                <p>Dans un environnement d'entreprise distribué, la sécurisation des communications entre différents sites est primordiale. Ce projet simule une telle architecture pour démontrer la capacité à déployer et gérer des solutions VPN complexes, essentielles pour la continuité des affaires et la protection des données.</p>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Aspects techniques & défis relevés</h5>
+                                <p>Configuration avancée de pfSense pour l'IPsec (Phase 1 & 2, authentification, chiffrement). Gestion des interfaces réseau virtuelles sous VMware. Définition de plans d'adressage IP cohérents et sans chevauchement. Dépannage des problèmes de routage et de règles de pare-feu complexes. Intégration avec Active Directory sur Windows Server pour l'authentification des utilisateurs et des ressources.</p>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Compétences démontrées</h5>
+                                <div class="skills-badges">
+                                    <span>Configuration VPN IPsec</span>
+                                    <span>Administration pfSense</span>
+                                    <span>Routage avancé</span>
+                                    <span>Virtualisation VMware</span>
+                                    <span>Sécurité réseau</span>
+                                    <span>Dépannage réseau</span>
+                                </div>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Leçons apprises & Améliorations futures</h5>
+                                <p>L'importance d'une documentation claire du plan d'adressage et des règles de firewall pour faciliter la maintenance et le dépannage. La complexité de l'interopérabilité entre différents systèmes VPN et la nécessité de tests rigoureux. Possibilité d'explorer des solutions VPN basées sur des certificats pour une sécurité renforcée ou l'intégration avec des services cloud pour une flexibilité accrue.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projet 2 - Serveur Web Sécurisé (Nginx + Let's Encrypt) -->
+                    <div class="project-item">
+                        <div class="project-header clickable" data-toggle="project2" role="button" aria-expanded="false" aria-controls="project2-details">
+                            <h4>Serveur Web Sécurisé (Nginx + Let's Encrypt sur Debian)</h4>
+                            <p>Déploiement d'un serveur web Nginx sur Debian, configuration HTTPS avec Let's Encrypt, optimisation des performances et sécurisation de base.</p>
+                            <div class="badges">
+                                <span class="badge">Nginx</span><span class="badge">HTTPS</span><span class="badge">Let's Encrypt</span><span class="badge">Debian</span><span class="badge">Sécurité Web</span>
+                            </div>
+                            <i class="fas fa-chevron-down arrow"></i>
+                        </div>
+                        <div class="project-details" id="project2-details" aria-hidden="true">
+                            <div class="details-section">
+                                <h5>Objectifs du projet</h5>
+                                <ul>
+                                    <li>Mettre en place un serveur web Nginx fonctionnel et performant, capable de servir du contenu statique et dynamique.</li>
+                                    <li>Sécuriser les communications via HTTPS en utilisant des certificats SSL/TLS gratuits et automatisés de Let's Encrypt.</li>
+                                    <li>Optimiser la configuration Nginx pour la vitesse de chargement des pages, la résilience aux pics de trafic et la consommation de ressources.</li>
+                                    <li>Implémenter des mesures de sécurité de base, telles que la configuration de pare-feu et la protection contre les attaques courantes (DDoS, injections).</li>
+                                </ul>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Contexte & Enjeux</h5>
+                                <p>La présence en ligne est essentielle pour toute organisation, et la sécurité des sites web est une préoccupation majeure face aux menaces croissantes. Ce projet vise à démontrer la capacité à déployer une infrastructure web sécurisée, performante et moderne, respectant les standards actuels du web.</p>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Aspects techniques & défis relevés</h5>
+                                <p>Installation et configuration de Nginx (virtual hosts, reverse proxy pour des applications backend, gestion des fichiers de configuration). Utilisation de Certbot pour l'automatisation de l'obtention et du renouvellement des certificats SSL/TLS. Configuration de pare-feu (UFW/iptables) pour restreindre l'accès aux ports nécessaires. Optimisation des en-têtes HTTP (HSTS, X-Content-Type-Options, CSP) pour renforcer la sécurité. Gestion des logs d'accès et d'erreurs pour le monitoring et le dépannage de base.</p>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Compétences démontrées</h5>
+                                <div class="skills-badges">
+                                    <span>Administration Nginx</span>
+                                    <span>Sécurisation HTTPS (SSL/TLS)</span>
+                                    <span>Gestion de certificats (Let's Encrypt)</span>
+                                    <span>Administration Debian</span>
+                                    <span>Optimisation web</span>
+                                    <span>Sécurité des applications web</span>
+                                </div>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Leçons apprises & Améliorations futures</h5>
+                                <p>L'importance de la mise à jour régulière des certificats et des systèmes d'exploitation pour maintenir un niveau de sécurité optimal. Exploration de solutions de WAF (Web Application Firewall) pour une protection avancée contre les attaques spécifiques aux applications web, et de CDN (Content Delivery Network) pour une distribution globale du contenu et des performances accrues.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projet 3 - Monitoring Système avec Prometheus & Grafana -->
+                    <div class="project-item">
+                        <div class="project-header clickable" data-toggle="project3" role="button" aria-expanded="false" aria-controls="project3-details">
+                            <h4>Monitoring Système avec Prometheus & Grafana</h4>
+                            <p>Mise en place d'une solution de monitoring complète pour serveurs Linux, utilisant Prometheus pour la collecte de métriques et Grafana pour la visualisation et les alertes.</p>
+                            <div class="badges">
+                                <span class="badge">Prometheus</span><span class="badge">Grafana</span><span class="badge">Monitoring</span><span class="badge">Linux</span><span class="badge">DevOps</span>
+                            </div>
+                            <i class="fas fa-chevron-down arrow"></i>
+                        </div>
+                        <div class="project-details" id="project3-details" aria-hidden="true">
+                            <div class="details-section">
+                                <h5>Objectifs du projet</h5>
+                                <ul>
+                                    <li>Collecter des métriques système (CPU, RAM, disque, réseau, processus) de manière fiable et en temps réel depuis plusieurs serveurs Linux.</li>
+                                    <li>Visualiser les données de performance via des tableaux de bord interactifs et personnalisables dans Grafana.</li>
+                                    <li>Configurer des alertes pour les seuils critiques, les anomalies de comportement et les pannes potentielles, avec des notifications vers des canaux appropriés.</li>
+                                    <li>Assurer la haute disponibilité et la performance de l'infrastructure de monitoring elle-même.</li>
+                                </ul>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Contexte & Enjeux</h5>
+                                <p>Un monitoring efficace est crucial pour la stabilité, la performance et la sécurité de toute infrastructure IT moderne. Il permet d'identifier proactivement les problèmes, d'optimiser les ressources et de garantir la continuité des services. Ce projet démontre la capacité à mettre en œuvre des outils de monitoring modernes et puissants, essentiels dans une approche DevOps.</p>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Aspects techniques & défis relevés</h5>
+                                <p>Installation et configuration de Prometheus Server pour la collecte des métriques via le modèle pull. Déploiement de Node Exporter sur les serveurs cibles pour exposer les métriques système. Création de tableaux de bord personnalisés dans Grafana, incluant des graphiques, des jauges et des indicateurs clés de performance. Écriture de requêtes PromQL complexes pour extraire des informations spécifiques. Configuration d'Alertmanager pour la gestion des alertes et l'envoi de notifications (email, Slack, PagerDuty). Optimisation de la rétention des données et de la performance de la base de données de séries temporelles de Prometheus.</p>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Compétences démontrées</h5>
+                                <div class="skills-badges">
+                                    <span>Monitoring système (Prometheus)</span>
+                                    <span>Visualisation de données (Grafana)</span>
+                                    <span>Gestion d'alertes</span>
+                                    <span>Administration Linux</span>
+                                    <span>Concepts DevOps</span>
+                                    <span>Analyse de performance</span>
+                                </div>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Leçons apprises & Améliorations futures</h5>
+                                <p>L'importance de définir des métriques pertinentes et des seuils d'alerte précis pour éviter la fatigue d'alerte. Exploration de l'intégration avec d'autres exportateurs (MySQL Exporter, Nginx Exporter, Blackbox Exporter pour la surveillance externe) et de l'automatisation du déploiement de l'ensemble de la stack via Ansible ou Terraform pour une gestion d'infrastructure plus robuste.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projet 4 - Déploiement d'une application Dockerisée -->
+                    <div class="project-item">
+                        <div class="project-header clickable" data-toggle="project4" role="button" aria-expanded="false" aria-controls="project4-details">
+                            <h4>Déploiement d'une application Dockerisée (Docker Compose)</h4>
+                            <p>Mise en place d'un environnement de développement et de production pour une application web multi-services (frontend, backend, base de données) utilisant Docker et Docker Compose.</p>
+                            <div class="badges">
+                                <span class="badge">Docker</span><span class="badge">Docker Compose</span><span class="badge">Conteneurisation</span><span class="badge">DevOps</span><span class="badge">CI/CD</span>
+                            </div>
+                            <i class="fas fa-chevron-down arrow"></i>
+                        </div>
+                        <div class="project-details" id="project4-details" aria-hidden="true">
+                            <div class="details-section">
+                                <h5>Objectifs du projet</h5>
+                                <ul>
+                                    <li>Conteneuriser une application web complète, décomposée en plusieurs services (frontend, backend API, base de données), pour faciliter le déploiement et la gestion.</li>
+                                    <li>Orchestrer ces multiples services avec Docker Compose, permettant de définir, lancer et gérer l'application entière avec une seule commande.</li>
+                                    <li>Assurer la portabilité et la reproductibilité de l'environnement de développement et de production, garantissant que l'application fonctionne de manière identique partout.</li>
+                                    <li>Mettre en place un pipeline CI/CD simple pour l'intégration et le déploiement continus, automatisant les tests et le déploiement des nouvelles versions.</li>
+                                </ul>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Contexte & Enjeux</h5>
+                                <p>La conteneurisation est devenue un standard de l'industrie pour le déploiement d'applications modernes, offrant isolation, portabilité et efficacité. Ce projet illustre la maîtrise des outils Docker pour des architectures distribuées, un savoir-faire essentiel dans les pratiques DevOps actuelles.</p>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Aspects techniques & défis relevés</h5>
+                                <p>Rédaction de Dockerfiles optimisés pour chaque service de l'application, en veillant à la taille des images et à la sécurité. Création d'un fichier <code>docker-compose.yml</code> pour l'orchestration des services, la définition des réseaux internes et des volumes persistants. Gestion des volumes persistants pour la base de données afin d'assurer la persistance des données. Configuration des réseaux Docker pour permettre la communication entre les conteneurs. Intégration avec un dépôt Git (GitHub/GitLab) et mise en place de hooks de déploiement pour automatiser le processus de build et de déploiement.</p>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Compétences démontrées</h5>
+                                <div class="skills-badges">
+                                    <span>Conteneurisation Docker</span>
+                                    <span>Orchestration Docker Compose</span>
+                                    <span>Déploiement d'applications</span>
+                                    <span>Principes CI/CD</span>
+                                    <span>Gestion de services</span>
+                                    <span>Architecture microservices (bases)</span>
+                                </div>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Leçons apprises & Améliorations futures</h5>
+                                <p>L'importance de la gestion des secrets (variables d'environnement, Docker Secrets) et de la sécurité des images Docker (analyse de vulnérabilités). Exploration de solutions d'orchestration plus avancées comme Kubernetes pour des déploiements à grande échelle, la haute disponibilité et la gestion de clusters de conteneurs.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projet 5 - Script d'inventaire réseau avec Python -->
+                    <div class="project-item">
+                        <div class="project-header clickable" data-toggle="project5" role="button" aria-expanded="false" aria-controls="project5-details">
+                            <h4>Script d'inventaire réseau avec Python (SNMP, SSH)</h4>
+                            <p>Développement d'un script Python pour automatiser la collecte d'informations sur les équipements réseau (routeurs, switchs) via SNMP et SSH, et générer un rapport d'inventaire.</p>
+                            <div class="badges">
+                                <span class="badge">Python</span><span class="badge">SNMP</span><span class="badge">SSH</span><span class="badge">Automatisation</span><span class="badge">Inventaire IT</span>
+                            </div>
+                            <i class="fas fa-chevron-down arrow"></i>
+                        </div>
+                        <div class="project-details" id="project5-details" aria-hidden="true">
+                            <div class="details-section">
+                                <h5>Objectifs du projet</h5>
+                                <ul>
+                                    <li>Automatiser la découverte et la collecte d'informations détaillées sur les équipements réseau (modèle, version OS, interfaces, adresses IP, état des ports) présents dans une infrastructure.</li>
+                                    <li>Utiliser les protocoles SNMP (Simple Network Management Protocol) et SSH (Secure Shell) pour interroger les appareils de manière standardisée et sécurisée.</li>
+                                    <li>Générer un rapport d'inventaire structuré et lisible, exportable dans différents formats (CSV, JSON, HTML), facilitant l'audit et la gestion.</li>
+                                    <li>Améliorer la gestion et la documentation de l'infrastructure réseau, réduisant les erreurs manuelles et le temps passé sur ces tâches.</li>
+                                </ul>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Contexte & Enjeux</h5>
+                                <p>La gestion manuelle d'un inventaire réseau, surtout dans des infrastructures de taille moyenne à grande, est chronophage, sujette aux erreurs et rapidement obsolète. Ce projet propose une solution d'automatisation robuste pour une meilleure efficacité opérationnelle, une meilleure visibilité sur le parc réseau et une conformité accrue.</p>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Aspects techniques & défis relevés</h5>
+                                <p>Utilisation de bibliothèques Python spécifiques : <code>pysnmp</code> pour les requêtes SNMP (GET, WALK) et <code>netmiko</code> ou <code>paramiko</code> pour l'automatisation des sessions SSH et l'exécution de commandes CLI. Gestion des identifiants de connexion sécurisés (via variables d'environnement ou un fichier de configuration chiffré). Parsing des sorties de commandes SSH et des réponses SNMP pour extraire les informations pertinentes. Structuration des données collectées dans des objets Python et exportation vers les formats de rapport souhaités. Gestion des erreurs (timeouts, équipements non répondants, erreurs d'authentification) et implémentation de mécanismes de retry.</p>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Compétences démontrées</h5>
+                                <div class="skills-badges">
+                                    <span>Scripting Python</span>
+                                    <span>Gestion SNMP</span>
+                                    <span>Automatisation SSH</span>
+                                    <span>Analyse de données réseau</span>
+                                    <span>Développement d'outils</span>
+                                    <span>Gestion des erreurs</span>
+                                </div>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Leçons apprises & Améliorations futures</h5>
+                                <p>L'importance de la gestion des exceptions et de la robustesse du code pour gérer les imprévus du réseau. Intégration avec une base de données CMDB (Configuration Management Database) pour un suivi dynamique de l'inventaire et une synchronisation continue. Possibilité d'ajouter des fonctionnalités de détection de changements et d'alertes en cas de modifications non autorisées.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projet 6 - Laboratoire Active Directory (Windows Server) -->
+                    <div class="project-item">
+                        <div class="project-header clickable" data-toggle="project6" role="button" aria-expanded="false" aria-controls="project6-details">
+                            <h4>Laboratoire Active Directory (Windows Server)</h4>
+                            <p>Mise en place d'un environnement Active Directory complet sur Windows Server, incluant la gestion des utilisateurs, groupes, GPO, DNS et DHCP intégrés.</p>
+                            <div class="badges">
+                                <span class="badge">Active Directory</span><span class="badge">Windows Server</span><span class="badge">GPO</span><span class="badge">DNS</span><span class="badge">DHCP</span>
+                            </div>
+                            <i class="fas fa-chevron-down arrow"></i>
+                        </div>
+                        <div class="project-details" id="project6-details" aria-hidden="true">
+                            <div class="details-section">
+                                <h5>Objectifs du projet</h5>
+                                <ul>
+                                    <li>Déployer et configurer un domaine Active Directory fonctionnel, incluant un contrôleur de domaine et des serveurs membres.</li>
+                                    <li>Gérer les utilisateurs, groupes et unités d'organisation (OU) de manière structurée et sécurisée.</li>
+                                    <li>Appliquer des stratégies de groupe (GPO) pour la sécurité, la configuration des postes clients et la gestion des applications.</li>
+                                    <li>Intégrer les services DNS et DHCP pour une résolution de noms et une attribution d'adresses IP centralisées et fiables.</li>
+                                </ul>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Contexte & Enjeux</h5>
+                                <p>Active Directory est la pierre angulaire de la gestion des identités et des ressources dans les environnements Windows d'entreprise. Ce projet valide la capacité à administrer un tel environnement de manière efficace et sécurisée, un savoir-faire fondamental pour tout administrateur système.</p>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Aspects techniques & défis relevés</h5>
+                                <p>Installation du rôle AD DS (Active Directory Domain Services) et promotion d'un serveur en contrôleur de domaine. Création de la structure d'OU (Organizational Units) pour organiser les objets AD. Délégation de contrôle pour une gestion granulaire des permissions. Configuration de GPO pour les mots de passe complexes, les restrictions logicielles, les mappages de lecteurs réseau et les déploiements de logiciels. Dépannage des problèmes de réplication AD, de résolution DNS et de distribution DHCP. Mise en place de la haute disponibilité pour les services critiques.</p>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Compétences démontrées</h5>
+                                <div class="skills-badges">
+                                    <span>Administration Active Directory</span>
+                                    <span>Gestion GPO</span>
+                                    <span>Configuration DNS/DHCP</span>
+                                    <span>Administration Windows Server</span>
+                                    <span>Gestion des identités</span>
+                                    <span>Sécurité Windows</span>
+                                </div>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Leçons apprises & Améliorations futures</h5>
+                                <p>L'importance d'une planification minutieuse de la structure AD et des GPO pour éviter les conflits et les problèmes de performance. Exploration de l'intégration avec Azure AD Connect pour des environnements hybrides (on-premise et cloud) et la gestion des identités fédérées. Mise en place de solutions de monitoring spécifiques à Active Directory.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projet 7 - Interface dynamique VBA (UserForm) -->
+                    <div class="project-item">
+                        <div class="project-header clickable" data-toggle="project7" role="button" aria-expanded="false" aria-controls="project7-details">
+                            <h4>Interface dynamique VBA (UserForm)</h4>
+                            <p>Développement d'une interface utilisateur (UserForm) en VBA pour Excel, permettant la saisie et la gestion dynamique de données multi-profils avec ajout/suppression de champs en temps réel.</p>
+                            <div class="badges">
+                                <span class="badge">VBA UI</span><span class="badge">UserForm</span><span class="badge">Dynamique</span><span class="badge">Excel</span><span class="badge">Automatisation</span>
+                            </div>
+                            <i class="fas fa-chevron-down arrow"></i>
+                        </div>
+                        <div class="project-details" id="project7-details" aria-hidden="true">
+                            <div class="details-section">
+                                <h5>Objectifs du projet</h5>
+                                <ul>
+                                    <li>Créer une interface utilisateur intuitive et dynamique pour la saisie de données complexes et structurées dans Excel.</li>
+                                    <li>Permettre l'ajout et la suppression de champs de formulaire en temps réel, s'adaptant aux besoins spécifiques de l'utilisateur.</li>
+                                    <li>Assurer la validation des données saisies (format, type, plage de valeurs) et leur stockage structuré dans des feuilles de calcul Excel.</li>
+                                    <li>Améliorer l'expérience utilisateur pour des tâches administratives répétitives, réduisant le risque d'erreurs et augmentant la productivité.</li>
+                                </ul>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Contexte & Enjeux</h5>
+                                <p>Dans de nombreux contextes administratifs et de petites entreprises, Excel reste un outil central pour la gestion de données. Ce projet montre comment VBA peut transformer des feuilles de calcul statiques en applications interactives et efficaces, offrant une solution personnalisée sans nécessiter de développement web complexe.</p>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Aspects techniques & défis relevés</h5>
+                                <p>Utilisation de VBA pour manipuler les contrôles UserForm dynamiquement (création, positionnement, gestion des propriétés via <code>CreateObject</code>). Gestion des événements (clic, changement de valeur, validation) pour une interaction fluide. Implémentation de la validation des données via des expressions régulières et des fonctions VBA personnalisées. Défis liés au redimensionnement dynamique des contrôles et des cadres (Frames) sur le UserForm, ainsi qu'à la persistance des données dans des tableaux ou des collections VBA avant l'écriture sur la feuille de calcul.</p>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Compétences démontrées</h5>
+                                <div class="skills-badges">
+                                    <span>VBA UI dynamique (Frame + Controls)</span>
+                                    <span>Gestion de données multi-profils</span>
+                                    <span>Logique d'interface utilisateur</span>
+                                    <span>Validation de formulaire</span>
+                                    <span>Automatisation Excel</span>
+                                    <span>Développement d'applications bureautiques</span>
+                                </div>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Leçons apprises & Améliorations futures</h5>
+                                <p>L'importance d'une architecture modulaire pour les projets VBA complexes, facilitant la maintenance et l'ajout de nouvelles fonctionnalités. Exploration de l'intégration avec des bases de données externes (Access, SQL Server Express) pour une meilleure scalabilité et une gestion plus robuste des données, au-delà des limites d'Excel.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projet 8 - Système scolaire VBA -->
+                    <div class="project-item">
+                        <div class="project-header clickable" data-toggle="project8" role="button" aria-expanded="false" aria-controls="project8-details">
+                            <h4>Système scolaire VBA (sans UserForm) : étudiants + matières + PV + bulletin</h4>
+                            <p>Application Excel pour enregistrer étudiants/matières par classe et générer automatiquement bulletins et procès-verbaux (avec signature/cachet).</p>
+                            <div class="badges">
+                                <span class="badge">VBA</span><span class="badge">Excel</span><span class="badge">Automatisation Scolaire</span><span class="badge">Génération PDF</span>
+                            </div>
+                            <i class="fas fa-chevron-down arrow"></i>
+                        </div>
+                        <div class="project-details" id="project8-details" aria-hidden="true">
+                            <div class="details-section">
+                                <h5>Objectifs du projet</h5>
+                                <ul>
+                                    <li>Automatiser la saisie et le calcul des notes pour les étudiants, en gérant différentes matières et coefficients.</li>
+                                    <li>Générer des bulletins de notes et des procès-verbaux officiels conformes aux exigences administratives.</li>
+                                    <li>Permettre l'ajout de signatures et cachets dynamiques aux documents générés, pour une validation officielle.</li>
+                                    <li>Faciliter l'exportation en lot des documents au format PDF, pour une distribution et un archivage simplifiés.</li>
+                                </ul>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Contexte & Enjeux</h5>
+                                <p>La gestion administrative dans les établissements scolaires est souvent répétitive et chronophage, notamment la production de documents officiels. Ce projet vise à simplifier et automatiser la production de bulletins et PV, libérant du temps pour les tâches pédagogiques et administratives à plus forte valeur ajoutée.</p>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Aspects techniques & défis relevés</h5>
+                                <p>Utilisation de VBA pour manipuler les feuilles de calcul Excel, effectuer des calculs complexes (moyennes pondérées, classements, appréciations conditionnelles). Génération de PDF via l'API Excel (méthode <code>ExportAsFixedFormat</code>). Insertion dynamique d'images (signatures, cachets) dans les documents. Gestion des erreurs de saisie, formatage conditionnel des cellules et protection des feuilles pour garantir l'intégrité des données. Création de macros pour des actions rapides (générer tous les bulletins d'une classe, exporter tous les PV).</p>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Compétences démontrées</h5>
+                                <div class="skills-badges">
+                                    <span>Automatisation Excel complète</span>
+                                    <span>Génération de documents structurés</span>
+                                    <span>Gestion de classes / matières / calculs</span>
+                                    <span>Insertion d'images (signature, cachet)</span>
+                                    <span>Programmation VBA</span>
+                                    <span>Rigueur administrative</span>
+                                </div>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Leçons apprises & Améliorations futures</h5>
+                                <p>L'importance de la robustesse des formules et de la gestion des cas limites (notes manquantes, coefficients nuls). Possibilité d'intégrer une base de données externe (par exemple, via ADO) pour une meilleure gestion des données sur le long terme et une scalabilité accrue, ou de développer une interface web pour une accessibilité multi-utilisateurs.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projet 9 - Interface admin fournisseurs (PHP + MySQL) -->
+                    <div class="project-item">
+                        <div class="project-header clickable" data-toggle="project9" role="button" aria-expanded="false" aria-controls="project9-details">
+                            <h4>Interface admin fournisseurs (PHP + MySQL) + catégories + commande</h4>
+                            <p>Module web d'administration pour fournisseurs : ajout, gestion de produits par catégories, affichage et commande.</p>
+                            <div class="badges">
+                                <span class="badge">PHP</span><span class="badge">MySQL</span><span class="badge">CRUD</span><span class="badge">Développement Web</span><span class="badge">Base de données</span>
+                            </div>
+                            <i class="fas fa-chevron-down arrow"></i>
+                        </div>
+                        <div class="project-details" id="project9-details" aria-hidden="true">
+                            <div class="details-section">
+                                <h5>Objectifs du projet</h5>
+                                <ul>
+                                    <li>Développer une interface d'administration complète pour la gestion des fournisseurs, des produits et de leurs catégories.</li>
+                                    <li>Implémenter les opérations CRUD (Create, Read, Update, Delete) pour les produits et catégories, permettant une gestion flexible du catalogue.</li>
+                                    <li>Permettre le suivi des commandes, la gestion des statuts et l'affichage de statistiques clés (chiffre d'affaires, stock faible, produits les plus vendus).</li>
+                                    <li>Générer des factures au format PDF pour les commandes validées, avec personnalisation des informations.</li>
+                                </ul>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Contexte & Enjeux</h5>
+                                <p>La gestion des stocks, des produits et des relations fournisseurs est cruciale pour toute entreprise de commerce ou de distribution. Ce projet démontre la capacité à construire des applications web robustes et sécurisées pour la gestion d'entreprise, en utilisant des technologies web fondamentales.</p>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Aspects techniques & défis relevés</h5>
+                                <p>Conception de la base de données MySQL (environ 18 tables, gestion des relations complexes, indexation pour la performance). Développement de l'API PHP pour les opérations CRUD, en utilisant le modèle MVC (Model-View-Controller) pour une meilleure organisation du code. Sécurisation des requêtes (utilisation de PDO, préparation des requêtes pour prévenir les injections SQL). Implémentation d'un tableau de bord avec des statistiques en temps réel (graphiques simples). Génération de PDF côté serveur (avec des bibliothèques comme FPDF ou TCPDF). Gestion des sessions utilisateur et des droits d'accès.</p>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Compétences démontrées</h5>
+                                <div class="skills-badges">
+                                    <span>CRUD PHP/MySQL</span>
+                                    <span>Gestion catégories + produits</span>
+                                    <span>Développement back-office</span>
+                                    <span>Sécurité (validation, structure DB)</span>
+                                    <span>Génération de rapports</span>
+                                    <span>Modélisation de bases de données</span>
+                                </div>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Leçons apprises & Améliorations futures</h5>
+                                <p>L'importance de la normalisation de la base de données et de l'optimisation des requêtes pour garantir la performance et l'intégrité des données. Exploration de frameworks PHP (Laravel, Symfony) pour une architecture plus scalable, maintenable et sécurisée, ainsi que l'intégration de systèmes de paiement en ligne.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projet 10 - Portfolio technicien Réseaux & Systèmes (HTML/CSS/JS) -->
+                    <div class="project-item">
+                        <div class="project-header clickable" data-toggle="project10" role="button" aria-expanded="false" aria-controls="project10-details">
+                            <h4>Portfolio technicien Réseaux & Systèmes (HTML/CSS/JS)</h4>
+                            <p>Création d'un portfolio web responsive pour présenter tes projets orientés réseaux/systèmes et ton profil professionnel.</p>
+                            <div class="badges">
+                                <span class="badge">HTML/CSS/JS</span><span class="badge">Responsive</span><span class="badge">Portfolio</span><span class="badge">Design Web</span><span class="badge">Accessibilité</span>
+                            </div>
+                            <i class="fas fa-chevron-down arrow"></i>
+                        </div>
+                        <div class="project-details" id="project10-details" aria-hidden="true">
+                            <div class="details-section">
+                                <h5>Objectifs du projet</h5>
+                                <ul>
+                                    <li>Présenter les projets et compétences de manière professionnelle et attrayante, en mettant en valeur l'expertise technique.</li>
+                                    <li>Assurer un design entièrement responsive, garantissant une expérience utilisateur optimale sur tous les appareils (ordinateurs, tablettes, mobiles).</li>
+                                    <li>Intégrer des liens vers le CV, GitHub, LinkedIn et d'autres ressources pertinentes, facilitant l'accès aux informations complémentaires.</li>
+                                    <li>Optimiser le site pour le référencement (SEO) et l'accessibilité (ARIA), augmentant sa visibilité et son utilisabilité pour tous.</li>
+                                </ul>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Contexte & Enjeux</h5>
+                                <p>Un portfolio en ligne est un outil essentiel pour tout professionnel de l'IT, servant de vitrine pour les compétences et les réalisations. Ce projet est une démonstration concrète de mes capacités en développement web frontend et de ma compréhension des bonnes pratiques en matière de design, d'accessibilité et de performance web.</p>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Aspects techniques & défis relevés</h5>
+                                <p>Utilisation de HTML5 sémantique pour une structure de page claire et significative. CSS3 avancé (Flexbox, Grid pour la mise en page responsive, animations subtiles, variables CSS pour une gestion facile des thèmes). JavaScript vanilla pour les interactions dynamiques (toggle thème, accordéon projets, compteurs animés, validation de formulaire). Optimisation pour les appareils mobiles via des media queries. Implémentation des bonnes pratiques d'accessibilité (attributs ARIA, gestion du focus clavier). SEO basique (balises meta, structure de contenu, sitemap XML).</p>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Compétences démontrées</h5>
+                                <div class="skills-badges">
+                                    <span>Présentation professionnelle (branding)</span>
+                                    <span>HTML/CSS/JS propre et sémantique</span>
+                                    <span>Mise en valeur des compétences techniques</span>
+                                    <span>Design Responsive</span>
+                                    <span>Accessibilité Web</span>
+                                    <span>Optimisation SEO</span>
+                                </div>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Leçons apprises & Améliorations futures</h5>
+                                <p>L'importance de la performance web (optimisation des images, minification des fichiers) et de l'expérience utilisateur (UX) pour retenir l'attention des visiteurs. Exploration de frameworks frontend (React, Vue) pour des interfaces plus complexes et interactives, ou l'intégration d'un CMS headless pour une gestion de contenu facilitée.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projet Bonus 11 - Audit de sécurité Windows Server avec Kali -->
+                    <div class="project-item">
+                        <div class="project-header clickable" data-toggle="project11" role="button" aria-expanded="false" aria-controls="project11-details">
+                            <h4>Audit de sécurité sur Windows Server avec Kali</h4>
+                            <p>Audit complet de vulnérabilités sur un serveur Windows (Active Directory, ports ouverts), utilisation de Kali pour scans (Nmap, Metasploit, Nessus-like), rapport avec recommandations.</p>
+                            <div class="badges">
+                                <span class="badge">Kali Linux</span><span class="badge">Windows Server</span><span class="badge">Sécurité</span><span class="badge">Audit</span><span class="badge">Pentesting</span>
+                            </div>
+                            <i class="fas fa-chevron-down arrow"></i>
+                        </div>
+                        <div class="project-details" id="project11-details" aria-hidden="true">
+                            <div class="details-section">
+                                <h5>Objectifs du projet</h5>
+                                <ul>
+                                    <li>Identifier les vulnérabilités et les failles de sécurité potentielles sur un serveur Windows, y compris dans Active Directory et les services réseau.</li>
+                                    <li>Utiliser des outils de pentesting de Kali Linux pour simuler des attaques réelles et évaluer la robustesse du système.</li>
+                                    <li>Rédiger un rapport d'audit détaillé, incluant les vulnérabilités découvertes, leur niveau de criticité et des recommandations de remédiation concrètes.</li>
+                                    <li>Appliquer des mesures de hardening post-audit pour renforcer la sécurité du serveur et réduire sa surface d'attaque.</li>
+                                </ul>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Contexte & Enjeux</h5>
+                                <p>La cybersécurité est un domaine en constante évolution, et les serveurs Windows, en particulier ceux hébergeant Active Directory, sont des cibles privilégiées. Ce projet démontre la capacité à évaluer la posture de sécurité d'un système, à identifier ses faiblesses et à proposer des solutions pour le protéger efficacement contre les menaces.</p>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Aspects techniques & défis relevés</h5>
+                                <p>Utilisation de Nmap pour la découverte de services, la détection de versions et la recherche de vulnérabilités. Exploitation de failles connues avec Metasploit (par exemple, EternalBlue ou autres exploits ciblant SMB). Analyse du trafic réseau avec Wireshark pour identifier des communications suspectes ou des informations sensibles. Rédaction d'un rapport structuré avec des niveaux de criticité (CVSS), des preuves d'exploitation et des plans d'action détaillés. Implémentation de GPO (Group Policy Objects) et de règles de pare-feu Windows pour le hardening du système et des services.</p>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Compétences démontrées</h5>
+                                <div class="skills-badges">
+                                    <span>Audit vulnérabilités (Nmap, Metasploit)</span>
+                                    <span>Kali Linux pour pentest</span>
+                                    <span>Hardening Windows Server (GPO, firewall)</span>
+                                    <span>Rédaction rapports sécurité</span>
+                                    <span>Analyse trafic (Wireshark)</span>
+                                    <span>Gestion des risques</span>
+                                </div>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Leçons apprises & Améliorations futures</h5>
+                                <p>L'importance de la gestion des patchs, de la configuration sécurisée par défaut et de la segmentation réseau pour minimiser l'impact d'une compromission. Exploration de solutions SIEM (Security Information and Event Management) pour une surveillance continue des événements de sécurité et une détection proactive des menaces.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projet Bonus 12 - Scripting Shell et Bash -->
+                    <div class="project-item">
+                        <div class="project-header clickable" data-toggle="project12" role="button" aria-expanded="false" aria-controls="project12-details">
+                            <h4>Scripting Shell et Bash (Automatisation Systèmes)</h4>
+                            <p>Suites de scripts Bash/Shell pour automatisation : backup serveur, monitoring logs, déploiement services Linux, inventory AD, et hardening auto.</p>
+                            <div class="badges">
+                                <span class="badge">Bash</span><span class="badge">Shell Scripting</span><span class="badge">Automatisation</span><span class="badge">Linux</span><span class="badge">DevOps</span>
+                            </div>
+                            <i class="fas fa-chevron-down arrow"></i>
+                        </div>
+                        <div class="project-details" id="project12-details" aria-hidden="true">
+                            <div class="details-section">
+                                <h5>Objectifs du projet</h5>
+                                <ul>
+                                    <li>Automatiser les tâches répétitives d'administration système, telles que les sauvegardes, le monitoring et le déploiement.</li>
+                                    <li>Développer des scripts réutilisables et paramétrables pour diverses opérations, augmentant l'efficacité et réduisant les erreurs manuelles.</li>
+                                    <li>Intégrer des fonctionnalités de monitoring et d'alerte dans les scripts pour une supervision proactive des systèmes.</li>
+                                    <li>Optimiser les workflows d'administration sur les systèmes Linux et Windows, en tirant parti des capacités de scripting de chaque environnement.</li>
+                                </ul>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Contexte & Enjeux</h5>
+                                <p>L'automatisation est la clé de l'efficacité opérationnelle en IT, permettant de gérer des infrastructures complexes avec moins d'efforts et une plus grande fiabilité. Ce projet met en évidence la capacité à écrire des scripts robustes et intelligents pour gérer et maintenir des infrastructures, un pilier des pratiques DevOps.</p>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Aspects techniques & défis relevés</h5>
+                                <p>Utilisation avancée de Bash (boucles, conditions, fonctions, gestion des signaux, manipulation de fichiers texte). Parsing de fichiers de logs avec <code>awk</code> et <code>sed</code> pour extraire des informations clés. Synchronisation de fichiers et répertoires avec <code>rsync</code> pour les backups incrémentiels. Intégration de PowerShell pour les tâches d'administration Windows (gestion d'Active Directory, services). Gestion des erreurs, logging détaillé des exécutions de scripts et planification via <code>cron</code> pour les tâches récurrentes.</p>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Compétences démontrées</h5>
+                                <div class="skills-badges">
+                                    <span>Scripting Bash/Shell avancé</span>
+                                    <span>Automatisation backup/monitoring</span>
+                                    <span>Gestion erreurs et logging</span>
+                                    <span>Hybrid PowerShell/Bash</span>
+                                    <span>Cron jobs et scheduling</span>
+                                    <span>Optimisation des processus</span>
+                                </div>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Leçons apprises & Améliorations futures</h5>
+                                <p>L'importance de la modularité et de la documentation des scripts pour faciliter leur maintenance et leur réutilisation. Exploration de solutions d'orchestration comme Ansible ou Puppet pour gérer le déploiement de scripts sur un parc de serveurs plus large et garantir la cohérence de la configuration.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Nouveau Projet 13 - Infrastructure as Code (Terraform + AWS) -->
+                    <div class="project-item">
+                        <div class="project-header clickable" data-toggle="project13" role="button" aria-expanded="false" aria-controls="project13-details">
+                            <h4>Infrastructure as Code (Terraform + AWS)</h4>
+                            <p>Déploiement automatisé d'une infrastructure cloud sur AWS (VPC, EC2, S3, RDS) en utilisant Terraform pour la gestion de l'infrastructure as Code (IaC).</p>
+                            <div class="badges">
+                                <span class="badge">Terraform</span><span class="badge">AWS</span><span class="badge">IaC</span><span class="badge">Cloud Computing</span><span class="badge">DevOps</span>
+                            </div>
+                            <i class="fas fa-chevron-down arrow"></i>
+                        </div>
+                        <div class="project-details" id="project13-details" aria-hidden="true">
+                            <div class="details-section">
+                                <h5>Objectifs du projet</h5>
+                                <ul>
+                                    <li>Automatiser la création et la gestion des ressources cloud sur AWS, de manière reproductible et versionnée.</li>
+                                    <li>Utiliser Terraform pour définir l'infrastructure de manière déclarative, en spécifiant l'état final souhaité.</li>
+                                    <li>Assurer la reproductibilité et le versioning de l'infrastructure, permettant de suivre les changements et de revenir à des versions antérieures.</li>
+                                    <li>Mettre en place une architecture cloud sécurisée et scalable, capable de s'adapter aux besoins évolutifs.</li>
+                                </ul>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Contexte & Enjeux</h5>
+                                <p>L'Infrastructure as Code est une pratique essentielle du DevOps pour gérer des infrastructures cloud complexes de manière efficace, fiable et sécurisée. Elle permet de traiter l'infrastructure comme du code, facilitant l'automatisation, la collaboration et la réduction des erreurs manuelles. Ce projet démontre la maîtrise des outils IaC pour le déploiement et la gestion d'environnements cloud.</p>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Aspects techniques & défis relevés</h5>
+                                <p>Écriture de fichiers de configuration Terraform (HCL - HashiCorp Configuration Language) pour provisionner diverses ressources AWS : VPC (Virtual Private Cloud), sous-réseaux publics et privés, passerelles Internet, tables de routage, instances EC2 (serveurs virtuels), groupes de sécurité (firewalls), buckets S3 (stockage d'objets) et bases de données RDS (Relational Database Service). Gestion des états Terraform (<code>terraform state</code>) pour suivre l'état réel de l'infrastructure. Utilisation de modules Terraform pour réutiliser des blocs de configuration. Gestion des dépendances entre ressources. Sécurisation des accès AWS via IAM (Identity and Access Management) et des bonnes pratiques de sécurité cloud.</p>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Compétences démontrées</h5>
+                                <div class="skills-badges">
+                                    <span>Infrastructure as Code (Terraform)</span>
+                                    <span>Cloud Computing (AWS)</span>
+                                    <span>Gestion de ressources cloud</span>
+                                    <span>Principes DevOps</span>
+                                    <span>Automatisation d'infrastructure</span>
+                                    <span>Sécurité Cloud</span>
+                                </div>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Leçons apprises & Améliorations futures</h5>
+                                <p>L'importance de la gestion des secrets (AWS Secrets Manager, HashiCorp Vault) et de la collaboration sur les projets Terraform (back-ends distants, verrouillage d'état). Exploration de l'intégration avec des pipelines CI/CD (Jenkins, GitLab CI) pour un déploiement continu de l'infrastructure et une validation automatisée des changements.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Nouveau Projet 14 - Système de gestion de logs centralisé (ELK Stack) -->
+                    <div class="project-item">
+                        <div class="project-header clickable" data-toggle="project14" role="button" aria-expanded="false" aria-controls="project14-details">
+                            <h4>Système de gestion de logs centralisé (ELK Stack)</h4>
+                            <p>Mise en place d'une solution de centralisation et d'analyse de logs utilisant Elasticsearch, Logstash et Kibana (ELK Stack) pour une meilleure visibilité sur les événements système et applicatifs.</p>
+                            <div class="badges">
+                                <span class="badge">ELK Stack</span><span class="badge">Elasticsearch</span><span class="badge">Logstash</span><span class="badge">Kibana</span><span class="badge">Monitoring</span><span class="badge">Analyse de logs</span>
+                            </div>
+                            <i class="fas fa-chevron-down arrow"></i>
+                        </div>
+                        <div class="project-details" id="project14-details" aria-hidden="true">
+                            <div class="details-section">
+                                <h5>Objectifs du projet</h5>
+                                <ul>
+                                    <li>Centraliser les logs provenant de diverses sources (serveurs Linux, applications web, pare-feu) dans un dépôt unique et interrogeable.</li>
+                                    <li>Indexer et stocker les logs de manière efficace avec Elasticsearch, permettant des recherches rapides et complexes.</li>
+                                    <li>Analyser et visualiser les données de logs via des tableaux de bord interactifs et personnalisables dans Kibana.</li>
+                                    <li>Mettre en place des alertes basées sur des motifs spécifiques, des seuils d'événements ou des anomalies détectées dans les logs.</li>
+                                </ul>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Contexte & Enjeux</h5>
+                                <p>La gestion des logs est fondamentale pour le dépannage, la sécurité, l'audit et l'analyse de performance des systèmes informatiques. Une solution centralisée comme l'ELK Stack permet une collecte, une analyse et une visualisation rapides et approfondies des événements, transformant des données brutes en informations exploitables.</p>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Aspects techniques & défis relevés</h5>
+                                <p>Installation et configuration d'Elasticsearch (cluster, indexation, mapping). Configuration de Logstash pour la collecte, le parsing (avec des filtres Grok) et la transformation des logs avant leur envoi à Elasticsearch. Déploiement de Filebeat/Metricbeat sur les machines sources pour la collecte légère et l'envoi des logs. Conception de dashboards Kibana pour la visualisation des logs (erreurs applicatives, accès web, événements de sécurité, performances système). Configuration d'alertes via Watcher ou d'autres outils intégrés à la stack Elastic. Optimisation des performances de la stack et gestion de la rétention des données.</p>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Compétences démontrées</h5>
+                                <div class="skills-badges">
+                                    <span>Gestion de logs centralisée</span>
+                                    <span>Elasticsearch (indexation, recherche)</span>
+                                    <span>Logstash (parsing, transformation)</span>
+                                    <span>Kibana (visualisation, dashboards)</span>
+                                    <span>Monitoring et alertes</span>
+                                    <span>Analyse de données</span>
+                                </div>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Leçons apprises & Améliorations futures</h5>
+                                <p>L'importance de la planification de la capacité de stockage et de la performance d'Elasticsearch pour gérer de grands volumes de logs. Exploration de l'intégration avec des outils de sécurité (SIEM) pour une analyse corrélée des événements de sécurité et une réponse aux incidents plus rapide. Utilisation de Beats supplémentaires (Packetbeat, Auditbeat) pour une collecte de données plus diversifiée.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div> <!-- Fin projects-accordion -->
+            </div>
+        </section>
+
+        <!-- Section Engagements & Activités Associatives - Mettre en avant les soft skills -->
+        <section id="engagements" class="section fade-in" aria-labelledby="engagements-heading">
+            <div class="container">
+                <h2 id="engagements-heading">Mes Engagements & Activités Associatives</h2>
+                <p class="intro-section">
+                    Au-delà de mes projets techniques, je m’implique activement dans la vie associative et bénévole depuis plusieurs années. 
+                    Ces expériences m’ont permis de développer des compétences transversales essentielles : travail en équipe, gestion de projet, 
+                    communication, adaptabilité, sens du service et organisation d’événements. Elles prouvent aussi ma capacité à concilier 
+                    études exigeantes et engagement citoyen, enrichissant mon profil professionnel de manière significative.
+                </p>
+
+                <div class="engagements-grid">
+
+                    <!-- Activité 1 : Linké -->
+                    <div class="engagement-card">
+                        <div class="engagement-photo-placeholder" aria-hidden="true"></div> <!-- Placeholder pour l'image -->
+                        <div class="engagement-content">
+                            <h3>Coordination logistique – Association Linké</h3>
+                            <span class="periode">2023 – 2025</span>
+                            <p>
+                                Coordination logistique et animation d’événements de promotion des mobilités douces sur le campus. 
+                                Gestion d’une flotte de vélos partagés, organisation de stands, ateliers réparation et challenges mobilité, 
+                                contribuant à la sensibilisation environnementale et au bien-être étudiant.
+                            </p>
+                            <p class="soft-skills">
+                                Compétences développées : animation de groupe, gestion logistique, communication grand public, 
+                                organisation d’événements (jusqu’à 150 participants), résolution de problèmes en temps réel.
+                            </p>
+                            <div class="badges-soft">
+                                <span>Animation</span><span>Logistique</span><span>Communication</span><span>Mobilité durable</span><span>Gestion d'équipe</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Activité 2 : Épicerie solidaire – Asso Rayon Capitole -->
+                    <div class="engagement-card">
+                        <div class="engagement-photo-placeholder" aria-hidden="true"></div> <!-- Placeholder pour l'image -->
+                        <div class="engagement-content">
+                            <h3>Bénévole – Épicerie solidaire Asso Rayon Capitole<br>(Université Toulouse Capitole)</h3>
+                            <span class="periode">2024 – présent</span>
+                            <p>
+                                Participation active à la gestion de l’épicerie solidaire étudiante : réception des dons, tri, mise en rayon, 
+                                accueil des bénéficiaires, tenue de caisse, sensibilisation à la précarité alimentaire. 
+                                Une expérience enrichissante sur le plan humain et organisationnel.
+                            </p>
+                            <p class="soft-skills">
+                                Compétences développées : écoute active, gestion du stress, travail en équipe pluridisciplinaire, 
+                                solidarité et inclusion sociale, gestion des stocks et des flux.
+                            </p>
+                            <div class="badges-soft">
+                                <span>Solidarité</span><span>Accueil public</span><span>Organisation</span><span>Écoute</span><span>Gestion de stock</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Activité 3 : Sonorisateur paroissial -->
+                    <div class="engagement-card">
+                        <div class="engagement-photo-placeholder" aria-hidden="true"></div> <!-- Placeholder pour l'image -->
+                        <div class="engagement-content">
+                            <h3>Monteur son & micros – Paroisse étudiante Notre-Dame de la Dorade</h3>
+                            <span class="periode">2023 – présent</span>
+                            <p>
+                                Responsable technique bénévole pour les messes, concerts, conférences et célébrations : 
+                                installation micros HF, tables de mixage analogiques/numériques, enceintes, retour scène, 
+                                gestion feedback et équilibrage sonore en live (jusqu’à 400 personnes). 
+                                Une responsabilité technique exigeante et formatrice.
+                            </p>
+                            <p class="soft-skills">
+                                Compétences développées : technique son, réactivité en situation réelle, anticipation pannes, 
+                                travail sous pression, sens du service et discrétion, gestion de matériel technique.
+                            </p>
+                            <div class="badges-soft">
+                                <span>Son & technique</span><span>Réactivité</span><span>Gestion live</span><span>Service</span><span>Gestion de matériel</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Activité 4 : Cycliste bénévole -->
+                    <div class="engagement-card">
+                        <div class="engagement-photo-placeholder" aria-hidden="true"></div> <!-- Placeholder pour l'image -->
+                        <div class="engagement-content">
+                            <h3>Cycliste bénévole – Linké & autres collectifs</h3>
+                            <span class="periode">2024 – présent</span>
+                            <p>
+                                Participation à des maraudes solidaires, distributions alimentaires et événements éco-citoyens à vélo. 
+                                Entretien et petit réglage mécanique des vélos collectifs. 
+                                Un engagement physique et citoyen au service de la communauté.
+                            </p>
+                            <p class="soft-skills">
+                                Engagement écologique, endurance physique, sens de l’initiative, adaptabilité terrain, 
+                                résolution de problèmes mécaniques simples.
+                            </p>
+                            <div class="badges-soft">
+                                <span>Mobilité douce</span><span>Solidarité</span><span>Mécanique vélo</span><span>Initiative</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Nouvelle Activité 5 : Mentorat Étudiant -->
+                    <div class="engagement-card">
+                        <div class="engagement-photo-placeholder" aria-hidden="true"></div> <!-- Placeholder pour l'image -->
+                        <div class="engagement-content">
+                            <h3>Mentorat Étudiant – Programme d'intégration</h3>
+                            <span class="periode">2025 – présent</span>
+                            <p>
+                                Accompagnement de nouveaux étudiants en première année de Bachelor, aide à l'intégration, conseils méthodologiques et partage d'expérience sur les études en informatique. 
+                                Un rôle de transmission et de soutien essentiel pour les nouveaux arrivants.
+                            </p>
+                            <p class="soft-skills">
+                                Pédagogie, écoute, leadership informel, transmission de connaissances, développement personnel, 
+                                empathie.
+                            </p>
+                            <div class="badges-soft">
+                                <span>Pédagogie</span><span>Mentorat</span><span>Leadership</span><span>Partage</span><span>Empathie</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="engagements-conclusion">
+                    <p>
+                        Ces engagements m’ont appris à travailler avec des publics très variés, à gérer des imprévus, à coordonner des équipes 
+                        et à m’investir durablement dans des projets collectifs – des qualités que je mets aussi au service de mes projets techniques 
+                        et qui renforcent ma capacité à m'intégrer et à contribuer positivement dans un environnement professionnel.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Contact – Version Fonctionnelle et Améliorée -->
+        <section id="contact" class="section fade-in" aria-labelledby="contact-heading">
+            <div class="container">
+                <h2 id="contact-heading">Me contacter – Alternance / Stage / Collaboration</h2>
+
+                <p class="lead">
+                    Je recherche activement une <strong>alternance longue durée (1 à 2 ans)</strong> ou un stage significatif à partir de 
+                    <strong>septembre 2026</strong> ou <strong>janvier 2027</strong>.<br>
+                    N’hésitez pas à m’écrire directement via le formulaire ci-dessous — votre message arrivera instantanément dans ma boîte mail. 
+                    Je suis ouvert aux opportunités en Île-de-France et aux propositions de télétravail partiel.
+                </p>
+
+                <div class="contact-layout">
+                    <!-- Colonne infos rapides -->
+                    <div class="contact-info-column">
+                        <div class="contact-method">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                            <div>
+                                <h4>Email principal</h4>
+                                <p><a href="mailto:brindelndengue8@gmail.com">brindelndengue8@gmail.com</a></p>
+                                <small>Réponse habituelle sous 24–48 h</small>
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="subject">Sujet du message <span class="required">*</span></label>
-                            <select id="subject" name="Sujet" required aria-required="true">
-                                <option value="" disabled selected>Choisissez une option</option>
-                                <option value="alternance-2026">Proposition d’alternance 2026–2027</option>
-                                <option value="stage-long">Stage long / immersion</option>
-                                <option value="stage-court">Stage court / découverte</option>
-                                <option value="cdi-apprenti">Proposition CDI apprenti / futur</option>
-                                <option value="question-tech">Question technique / avis</option>
-                                <option value="autre">Autre demande</option>
-                            </select>
+                        <div class="contact-method">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                            <div>
+                                <h4>LinkedIn (recommandé pour les recruteurs)</h4>
+                                <p><a href="https://www.linkedin.com/in/brindel-ndengue-788574335/" target="_blank" rel="noopener noreferrer">linkedin.com/in/brindel-ndengue-788574335</a></p>
+                                <small>Profil à jour – ouvert aux messages InMail</small>
+                            </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="company">Entreprise / Organisation (facultatif)</label>
-                            <input type="text" 
-                                   id="company" 
-                                   name="Entreprise" 
-                                   placeholder="Ex : Orange, Thales, OVHcloud, SSII...">
+                        <div class="contact-method">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                            <div>
+                                <h4>GitHub</h4>
+                                <p><a href="https://github.com/BrindelNDENGUE8" target="_blank" rel="noopener noreferrer">github.com/BrindelNDENGUE8</a></p>
+                                <small>Scripts, labs réseaux, projets perso</small>
+                            </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="message">Votre message <span class="required">*</span></label>
-                            <textarea id="message" 
-                                      name="Message" 
-                                      rows="8" 
-                                      placeholder="Décrivez votre besoin, le poste, la localisation, le rythme envisagé, les technologies principales de votre infra, etc." 
-                                      required 
-                                      minlength="20"
-                                      aria-required="true"></textarea>
+                        <div class="contact-availability">
+                            <h4>Disponibilités pour alternance/stage</h4>
+                            <ul>
+                                <li>Alternance : dès septembre 2026 ou janvier 2027</li>
+                                <li>Rythme idéal : 3 jours entreprise / 2 jours école (ou inversé)</li>
+                                <li>Mobilité : Île-de-France principalement – remote partiel envisageable</li>
+                                <li>Durée souhaitée : 12 à 24 mois</li>
+                            </ul>
                         </div>
 
-                        <!-- Honeypot anti-spam (invisible) -->
-                        <input type="text" name="_gotcha" style="display:none" aria-hidden="true">
-
-                        <div class="form-actions">
-                            <button type="submit" class="btn-primary" id="submitBtn">
-                                <span class="btn-text">Envoyer le message</span>
-                                <span class="btn-loading" style="display:none">Envoi...</span>
-                            </button>
-                            <div id="formMessage" class="form-feedback" aria-live="polite"></div>
+                        <!-- Nouvelle section : Témoignages ou Recommandations -->
+                        <div class="testimonials-section">
+                            <h4>Ce qu'ils disent de moi</h4>
+                            <div class="testimonial-card">
+                                <p class="testimonial-text">« Brindel a fait preuve d'une grande rigueur et d'une capacité d'apprentissage impressionnante lors de son stage. Son autonomie et sa curiosité technique sont de véritables atouts. »</p>
+                                <p class="testimonial-author">— [Nom du tuteur de stage], [Titre], [Entreprise]</p>
+                            </div>
+                            <div class="testimonial-card">
+                                <p class="testimonial-text">« Toujours prêt à aider et à partager ses connaissances, Brindel est un membre précieux de notre association. Son sens de l'organisation et son engagement sont exemplaires. »</p>
+                                <p class="testimonial-author">— [Nom du responsable associatif], [Titre], [Association]</p>
+                            </div>
+                            <div class="testimonial-card">
+                                <p class="testimonial-text">« La capacité de Brindel à s'adapter rapidement aux nouvelles technologies et à résoudre des problèmes complexes est remarquable. Il sera un atout pour toute équipe. »</p>
+                                <p class="testimonial-author">— [Nom du professeur], [Matière], [Établissement]</p>
+                            </div>
                         </div>
-                    </form>
+                    </div>
+
+                    <!-- Colonne formulaire -->
+                    <div class="contact-form-column">
+                        <div class="form-wrapper">
+                            <h3>Envoyer un message</h3>
+
+                            <form id="realContactForm" 
+                                  action="https://formspree.io/f/VOTRE_CODE_FORMSPREE_ICI" 
+                                  method="POST"
+                                  class="contact-form" 
+                                  aria-label="Formulaire de contact">
+
+                                <!-- Champs obligatoires -->
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="sender-name">Votre nom / prénom <span class="required">*</span></label>
+                                        <input type="text" 
+                                               id="sender-name" 
+                                               name="Nom" 
+                                               placeholder="Ex : Marie Dupont" 
+                                               required 
+                                               minlength="2"
+                                               aria-required="true">
+                                        <p class="error-message" id="name-error" aria-live="polite"></p>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="sender-email">Votre email <span class="required">*</span></label>
+                                        <input type="email" 
+                                               id="sender-email" 
+                                               name="Email" 
+                                               placeholder="exemple@entreprise.com" 
+                                               required 
+                                               aria-required="true">
+                                        <p class="error-message" id="email-error" aria-live="polite"></p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="subject">Sujet du message <span class="required">*</span></label>
+                                    <select id="subject" name="Sujet" required aria-required="true">
+                                        <option value="" disabled selected>Choisissez une option</option>
+                                        <option value="alternance-2026">Proposition d’alternance 2026–2027</option>
+                                        <option value="stage-long">Stage long / immersion</option>
+                                        <option value="stage-court">Stage court / découverte</option>
+                                        <option value="cdi-apprenti">Proposition CDI apprenti / futur</option>
+                                        <option value="question-tech">Question technique / avis</option>
+                                        <option value="autre">Autre demande</option>
+                                    </select>
+                                    <p class="error-message" id="subject-error" aria-live="polite"></p>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="company">Entreprise / Organisation (facultatif)</label>
+                                    <input type="text" 
+                                           id="company" 
+                                           name="Entreprise" 
+                                           placeholder="Ex : Orange, Thales, OVHcloud, SSII...">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="message">Votre message <span class="required">*</span></label>
+                                    <textarea id="message" 
+                                              name="Message" 
+                                              rows="8" 
+                                              placeholder="Décrivez votre besoin, le poste, la localisation, le rythme envisagé, les technologies principales de votre infra, etc." 
+                                              required 
+                                              minlength="20"
+                                              aria-required="true"></textarea>
+                                    <p class="error-message" id="message-error" aria-live="polite"></p>
+                                </div>
+
+                                <!-- Honeypot anti-spam (invisible) -->
+                                <input type="text" name="_gotcha" style="display:none" aria-hidden="true">
+
+                                <div class="form-actions">
+                                    <button type="submit" class="btn-primary" id="submitBtn">
+                                        <span class="btn-text">Envoyer le message</span>
+                                        <span class="btn-loading" style="display:none" aria-hidden="true">Envoi...</span>
+                                    </button>
+                                    <div id="formMessage" class="form-feedback" aria-live="polite"></div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-footer-note">
+                    <p>Tous les messages sont reçus directement dans ma boîte mail personnelle.<br>
+                    Aucune donnée n’est stockée sur le site – confidentialité respectée.</p>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="contact-footer-note">
-            <p>Tous les messages sont reçus directement dans ma boîte mail personnelle.<br>
-            Aucune donnée n’est stockée sur le site – confidentialité respectée.</p>
-        </div>
-    </div>
-</section>
+    </main>
 
-    <footer>
-        <p>© 2026 Brindel Ndengue – Portfolio Technicien Supérieur Réseaux & Systèmes</p>
+    <!-- Pied de page - Informations de copyright et liens sociaux -->
+    <footer class="footer" aria-label="Pied de page">
+        <div class="container">
+            <p>© <span id="current-year">2026</span> Brindel Ndengue – Portfolio Technicien Supérieur Réseaux & Systèmes. Tous droits réservés.</p>
+            <div class="footer-links">
+                <a href="#" aria-label="Politique de confidentialité">Politique de confidentialité</a>
+                <span aria-hidden="true">|</span>
+                <a href="#" aria-label="Mentions légales">Mentions légales</a>
+            </div>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/brindel-ndengue-788574335/" target="_blank" rel="noopener noreferrer" aria-label="Profil LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/BrindelNDENGUE8" target="_blank" rel="noopener noreferrer" aria-label="Profil GitHub"><i class="fab fa-github"></i></a>
+                <!-- Ajoutez d'autres liens sociaux si nécessaire, par exemple Twitter, un blog technique, etc. -->
+            </div>
+        </div>
     </footer>
 
+    <!-- Script JavaScript principal pour les interactions dynamiques -->
     <script src="script.js"></script>
 </body>
 </html>
