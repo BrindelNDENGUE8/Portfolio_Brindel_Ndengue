@@ -173,3 +173,116 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+// Toggle thème dark/light
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+
+themeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    
+    // Change l'icône
+    const icon = themeToggle.querySelector('i');
+    if (body.classList.contains('dark-mode')) {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+    } else {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+    }
+    
+    // Sauvegarde préférence
+    localStorage.setItem('theme', body.classList.contains('dark-mode') ? 'dark' : 'light');
+});
+
+// Charger thème sauvegardé
+if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark-mode');
+    themeToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+}
+
+// Bulles animées
+function createBubbles() {
+    const container = document.querySelector('.bubbles-container');
+    for (let i = 0; i < 35; i++) {
+        const bubble = document.createElement('div');
+        bubble.classList.add('bubble');
+        
+        const size = Math.random() * 60 + 20;
+        bubble.style.width = `${size}px`;
+        bubble.style.height = `${size}px`;
+        bubble.style.left = `${Math.random() * 100}vw`;
+        bubble.style.animationDuration = `${Math.random() * 10 + 10}s`;
+        bubble.style.animationDelay = `${Math.random() * 5}s`;
+        
+        container.appendChild(bubble);
+    }
+}
+createBubbles();
+
+// Accordéon projets
+document.querySelectorAll('.project-header').forEach(header => {
+    header.addEventListener('click', () => {
+        const item = header.parentElement;
+        item.classList.toggle('active');
+        
+        // Fermer les autres
+        document.querySelectorAll('.project-item').forEach(other => {
+            if (other !== item) {
+                other.classList.remove('active');
+            }
+        });
+    });
+});
+
+// Lightbox pour images
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const closeBtn = document.querySelector('.lightbox-close');
+
+document.querySelectorAll('.clickable-img').forEach(img => {
+    img.addEventListener('click', () => {
+        lightboxImg.src = img.getAttribute('data-full') || img.src;
+        lightbox.classList.add('active');
+    });
+});
+
+closeBtn.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+});
+
+lightbox.addEventListener('click', e => {
+    if (e.target === lightbox) {
+        lightbox.classList.remove('active');
+    }
+});
+
+// Compteur animé
+const counters = document.querySelectorAll('.counter');
+const speed = 200;
+
+counters.forEach(counter => {
+    const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        
+        const increment = target / speed;
+        
+        if (count < target) {
+            counter.innerText = Math.ceil(count + increment);
+            setTimeout(updateCount, 1);
+        } else {
+            counter.innerText = target;
+        }
+    };
+    
+    // Déclencher quand visible
+    const observer = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting) {
+            updateCount();
+            observer.disconnect();
+        }
+    });
+    
+    observer.observe(counter);
+});
