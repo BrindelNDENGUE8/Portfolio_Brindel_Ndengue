@@ -2305,3 +2305,52 @@ body.dark-mode .btn-sub i {
 body.dark-mode .profile-pic-placeholder::before {
     color: var(--primary-color);
 }
+
+/* Hero photo – centrage parfait et visibilité améliorée */
+.hero-photo-container {
+    display: flex;
+    justify-content: center;           /* Centre horizontalement */
+    margin-bottom: 30px;               /* Espace sous la photo */
+}
+
+.photo-frame {
+    width: 180px;                      /* Taille fixe pour cohérence */
+    height: 180px;
+    border-radius: 50%;                /* Rond parfait */
+    overflow: hidden;                  /* Évite débordement */
+    border: 5px solid #0d6efd;         /* Bordure bleue élégante */
+    box-shadow: 0 10px 30px rgba(0, 123, 255, 0.4); /* Ombre douce */
+    background: #fff;                  /* Fond blanc si photo transparente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;                    /* Centre supplémentaire */
+}
+
+.profile-pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;                 /* Remplit le cercle sans déformer */
+    object-position: center;           /* Centre l'image dans le cadre */
+    display: block;
+}
+
+/* Responsive – photo plus petite sur mobile */
+@media (max-width: 768px) {
+    .photo-frame {
+        width: 140px;
+        height: 140px;
+        border-width: 4px;
+    }
+    
+    .hero-photo-container {
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .photo-frame {
+        width: 120px;
+        height: 120px;
+    }
+}
